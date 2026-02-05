@@ -22,8 +22,10 @@ export default {
         }
       },
       fontFamily: {
-        // Example premium fonts
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        // Brand fonts
+        display: ['"Very Vogue Display"', 'serif'],
+        sans: ['"Very Vogue Text"', 'Inter', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       }
     },
   },
