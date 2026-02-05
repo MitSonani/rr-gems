@@ -1,5 +1,6 @@
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import LabCertifications from './components/sections/LabCertifications';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <Header />
 
       <main className="flex-grow pt-32">
-        {/* Page content will go here */}
+        <LabCertifications />
       </main>
 
       <Footer />
