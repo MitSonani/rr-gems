@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import LabcerificationLine from '../../assets/common/labcerificationLine';
+import Sectionbutton from '../ui/Sectionbutton';
 
 // Images (using local assets)
 import originImg from '../../assets/journey/origin.png';
@@ -113,18 +114,16 @@ const Journey: React.FC = () => {
         <section ref={containerRef} className="relative py-24 bg-white">
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
+                <div className='flex justify-center'>
+                    <Sectionbutton text="From Earth to Elegance" />
+                </div>
                 <motion.div
-                    className="text-center mb-20 h-[50vh] flex flex-col justify-center items-center"
+                    className="text-center mb-30 flex flex-col justify-center items-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="mb-4 inline-block px-4 py-1.5 border border-[#1A1A1A]/20 rounded-lg">
-                        <span className="text-[12px] text-[#4A4A4A] font-medium tracking-wide">
-                            From Earth to Elegance
-                        </span>
-                    </div>
                     <h2 className="text-[52px] leading-tight mb-4 text-black">
                         The Journey of an <span className="text-[#FF8936] italic">RR Masterpiece</span>
                     </h2>

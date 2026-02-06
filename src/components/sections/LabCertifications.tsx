@@ -1,6 +1,7 @@
 import React from 'react';
 import LabcerificationLine from '../../assets/common/labcerificationLine';
 import { motion, type Variants } from 'framer-motion';
+import Sectionbutton from '../ui/Sectionbutton';
 
 const LabCertifications: React.FC = () => {
     const containerVariants: Variants = {
@@ -113,15 +114,8 @@ const LabCertifications: React.FC = () => {
                     variants={rightLineVariants}
                 />
             </div>
+            <Sectionbutton text="Pure, Natural, Lab Certified" itemVariants={itemVariants} />
 
-            <motion.div
-                className="mb-4 px-4 py-1.5 border border-[#1A1A1A]/20 rounded-lg"
-                variants={itemVariants}
-            >
-                <span className="text-[12px] text-[#4A4A4A] font-medium tracking-wide">
-                    Pure, Natural, Lab Certified
-                </span>
-            </motion.div>
 
             <motion.h2
                 className="text-[52px] leading-tight mb-4 text-center px-4"
