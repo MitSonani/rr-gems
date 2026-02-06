@@ -1,6 +1,7 @@
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import LabCertifications from './components/sections/LabCertifications';
+import ReturnPolicy from './components/sections/ReturnPolicy';
 import Journey from './components/sections/Journey';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
       <main className="flex-grow pt-32">
         <LabCertifications />
+        <ReturnPolicy />
         <Journey />
       </main>
 
