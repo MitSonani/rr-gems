@@ -1,28 +1,11 @@
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import LabCertifications from './components/sections/LabCertifications';
-import GemstonesForPurpose from './components/sections/GemstonesForPurpose';
-import ReturnPolicy from './components/sections/ReturnPolicy';
-import Journey from './components/sections/Journey';
-import FestivalCollection from './components/sections/FestivalCollection';
-import ExclusiveCollection from './components/sections/ExclusiveCollection';
+import { HomePage } from "./pages";
+import Layout from "./layouts/layout";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <Header />
-
-      <main className="flex-grow pt-32">
-        <LabCertifications />
-        <FestivalCollection />
-        <ExclusiveCollection />
-        <GemstonesForPurpose />
-        <ReturnPolicy />
-        <Journey />
-      </main>
-
-      <Footer />
-    </div>
+    <Layout>
+      <HomePage />
+    </Layout>
   );
 }
 
