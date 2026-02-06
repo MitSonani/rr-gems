@@ -5,6 +5,7 @@ import GemstonesForPurpose from './components/sections/GemstonesForPurpose';
 import ReturnPolicy from './components/sections/ReturnPolicy';
 import Journey from './components/sections/Journey';
 import FestivalCollection from './components/sections/FestivalCollection';
+import ExclusiveCollection from './components/sections/ExclusiveCollection';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <main className="flex-grow pt-32">
         <LabCertifications />
         <FestivalCollection />
+        <ExclusiveCollection />
         <GemstonesForPurpose />
         <ReturnPolicy />
         <Journey />
