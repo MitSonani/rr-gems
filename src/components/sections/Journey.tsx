@@ -61,41 +61,40 @@ const JourneyCard = ({ step, index, total, progress }: { step: typeof journeySte
     return (
         <div className="sticky top-20 md:top-32 flex items-center justify-center mb-8 md:mb-12">
             <motion.div
-                style={{ scale, opacity, backgroundColor: step.backgroundColor }}
-                className="w-full flex flex-col md:flex-row max-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
+                style={{ scale, backgroundColor: step.backgroundColor }}
+                className="w-full md:flex-row max-w-[1200px] min-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
             >
-                {/* Side: Content */}
-                <div className="p-8 md:p-16 flex flex-col justify-center order-2 md:order-1">
-                    <div className="flex gap-6 md:gap-8 items-start md:items-center">
-                        {/* Vertical Timeline Column */}
-                        <div className="flex flex-col items-center mt-1 md:mt-0">
-                            {step.progress}
-                        </div>
 
-                        <div className="flex flex-col">
-                            <h3
-                                className="text-2xl md:text-3xl font-very-vouge-display mb-4 md:mb-6"
-                                style={{ color: step.color }}
-                            >
-                                {step.title}
-                            </h3>
-                            <p className="text-[#666666] leading-relaxed text-base md:text-lg max-w-sm">
-                                {step.description}
-                            </p>
+                <div className='flex gap-20 '>
+                    <div className="p-8 md:p-16 flex flex-col justify-center">
+                        <div className="flex gap-6 md:gap-8 items-start md:items-center">
+                            <div className="flex flex-col items-center mt-1 md:mt-0">
+                                {step.progress}
+                            </div>
+                            <div className="flex flex-col">
+                                <h3
+                                    className="text-2xl md:text-3xl font-very-vouge-display mb-4 md:mb-6"
+                                    style={{ color: step.color }}
+                                >
+                                    {step.title}
+                                </h3>
+                                <p className="text-[#666666] leading-relaxed text-base md:text-lg max-w-sm">
+                                    {step.description}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Side: Image */}
-                <div className="w-full md:w-[550px] aspect-[4/3] md:h-[500px] overflow-hidden order-1 md:order-2">
-                    <motion.img
-                        src={step.image}
-                        alt={step.title}
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+                    <div className="w-full md:w-[570px] md:h-[500px] overflow-hidden ">
+                        <motion.img
+                            src={step.image}
+                            alt={step.title}
+                            className="w-full h-full object-cover"
+                        />
+                        {/* <div className="absolute inset-0 bg-black/5 pointer-events-none" /> */}
+                    </div>
                 </div>
-            </motion.div>
+            </motion.div >
         </div >
     );
 };
@@ -129,7 +128,6 @@ const Journey: React.FC = () => {
                     </div>
                 </motion.div>
 
-                {/* Journey Steps - Sticky Stack */}
                 <div className="relative pb-[50vh]">
                     {journeySteps.map((step, index) => (
                         <JourneyCard
