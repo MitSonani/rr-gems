@@ -33,6 +33,107 @@ const SLIDES = [
     }
 ];
 
+interface SlideProps {
+    slide: typeof SLIDES[0];
+    direction: number;
+}
+
+const HeroSlide: React.FC<{ slide: typeof SLIDES[0] }> = ({ slide }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="absolute inset-0 w-full h-full"
+        >
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                {/* Background Text */}
+                <div className="absolute top-[12%] lg:top-[8%] left-0 w-full flex justify-center z-0 px-4">
+                    <motion.h1
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 0.25, scale: 1 }}
+                        transition={{ duration: 1.2, delay: 0.2 }}
+                        className="text-[14vw] lg:text-[14vw] font-serif font-light text-white leading-none tracking-tight select-none pointer-events-none text-center transform-gpu"
+                    >
+                        {slide.title}
+                    </motion.h1>
+                </div>
+
+                {/* Arched Reveal Container */}
+                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                    <motion.div
+                        initial={{ clipPath: 'inset(5% 20% 5% 20% round 60px 60px 0 0)' }}
+                        animate={{ clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0 0)' }}
+                        transition={{ duration: 1.2, delay: 0.4, ease: [0.77, 0, 0.175, 1] }}
+                        className="relative w-full h-full flex items-center justify-center overflow-hidden"
+                    >
+                        <motion.img
+                            initial={{ scale: 1.1 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 1.5, delay: 0.2 }}
+                            src={slide.image}
+                            alt={slide.title}
+                            className="h-full w-full object-cover object-top"
+                        />
+                        <motion.div
+                            initial={{ x: '0%' }}
+                            animate={{ x: '-101%' }}
+                            transition={{ duration: 1.5, delay: 0.4, ease: [0.65, 0, 0.35, 1] }}
+                            className="absolute inset-0 left-0 w-1/2 h-full z-20"
+                            style={{ backgroundColor: slide.bgColor || '#1A1A1A' }}
+                        />
+                        <motion.div
+                            initial={{ x: '0%' }}
+                            animate={{ x: '101%' }}
+                            transition={{ duration: 1.5, delay: 0.4, ease: [0.65, 0, 0.35, 1] }}
+                            className="absolute inset-0 left-1/2 w-1/2 h-full z-20"
+                            style={{ backgroundColor: slide.bgColor || '#1A1A1A' }}
+                        />
+                    </motion.div>
+                </div>
+
+                {/* Content Overlays */}
+                <div className="absolute inset-0 z-40  pointer-events-none">
+                    {/* Left Content */}
+                    <div className="absolute left-[5%] right-[5%] lg:right-auto bottom-[15%] lg:max-w-[320px] flex flex-col items-center lg:items-start text-center lg:text-left pointer-events-auto px-6 py-4 bg-black/10 lg:bg-transparent rounded-xl backdrop-blur-[2px] lg:backdrop-blur-0">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                            className="text-sm lg:text-base font-light leading-relaxed mb-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                        >
+                            {slide.description}
+                        </motion.p>
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1 }}
+                            whileHover={{ scale: 1.05 }}
+                            className="bg-white text-black px-8 py-3 flex items-center gap-3 font-medium hover:bg-black hover:text-white transition-all duration-300 group shadow-xl"
+                        >
+                            {slide.buttonText} <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                    </div>
+
+                    {/* Right Content - Desktop Only */}
+                    <div className="absolute right-[5%] bottom-[15%] text-right text-white hidden lg:block pointer-events-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.9 }}
+                        >
+                            <h2 className="text-4xl font-serif font-light leading-snug whitespace-pre-line drop-shadow-xl">
+                                {slide.rightText}
+                            </h2>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
 const Hero: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [direction, setDirection] = useState(0); // -1 for left, 1 for right
@@ -54,128 +155,26 @@ const Hero: React.FC = () => {
         return () => clearInterval(timer);
     }, [nextSlide]);
 
-    const slide = SLIDES[currentSlide];
 
     return (
-        <section className="relative mt-[140px] h-[80vh] w-full overflow-hidden flex items-center justify-center transition-colors duration-1000" style={{ backgroundColor: slide.bgColor }}>
-            <AnimatePresence initial={true} custom={direction} mode="wait">
-                <motion.div
-                    key={currentSlide}
-                    custom={direction}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="absolute inset-0 w-full h-full flex items-center justify-center"
-                >
-                    {/* Background Text */}
-                    <div className="absolute top-10 left-0 w-full flex justify-center z-0">
-                        <motion.h1
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 0.6, scale: 1 }}
-                            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                            className="text-[14vw] font-serif font-light text-white leading-none tracking-tight select-none pointer-events-none"
-                        >
-                            {slide.title}
-                        </motion.h1>
-                    </div>
-
-                    {/* Arched Reveal Container */}
-                    <div className="relative z-10 w-full h-full flex items-center justify-center">
-                        <motion.div
-                            initial={{
-                                clipPath: 'inset(2% 35% 2% 35% round 300px 300px 0 0)',
-                            }}
-                            animate={{
-                                clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0 0)',
-                            }}
-                            transition={{
-                                duration: 1.2,
-                                delay: 2.2,
-                                ease: [0.77, 0, 0.175, 1]
-                            }}
-                            className="relative w-full h-full flex items-center justify-center overflow-hidden bg-transparent"
-                        >
-                            {/* Model Image */}
-                            <motion.img
-                                initial={{ scale: 1.1, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                                src={slide.image}
-                                alt={slide.title}
-                                className="h-full w-full object-cover object-top"
-                            />
-
-                            {/* Left Gate Panel */}
-                            <motion.div
-                                initial={{ x: '0%' }}
-                                animate={{ x: '-100%' }}
-                                transition={{ duration: 1.8, delay: 0.6, ease: [0.65, 0, 0.35, 1] }}
-                                className="absolute inset-0 left-0 w-1/2 h-full z-20"
-                                style={{ backgroundColor: slide.bgColor || '#1A1A1A' }}
-                            />
-
-                            {/* Right Gate Panel */}
-                            <motion.div
-                                initial={{ x: '0%' }}
-                                animate={{ x: '100%' }}
-                                transition={{ duration: 1.8, delay: 0.6, ease: [0.65, 0, 0.35, 1] }}
-                                className="absolute inset-0 right-0 left-1/2 w-1/2 h-full z-20"
-                                style={{ backgroundColor: slide.bgColor || '#1A1A1A' }}
-                            />
-
-                        </motion.div>
-                    </div>
-
-                    {/* Left Content Overlay */}
-                    <div className="absolute left-[5%] bottom-[15%] z-40 max-w-[280px] text-white hidden lg:block">
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1 }}
-                            className="text-base font-light leading-relaxed mb-6"
-                        >
-                            {slide.description}
-                        </motion.p>
-                        <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.2 }}
-                            whileHover={{ x: 5 }}
-                            className="bg-white text-black px-8 py-3 flex items-center gap-3 font-medium hover:bg-black hover:text-white transition-all duration-300 group"
-                        >
-                            {slide.buttonText} <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </motion.button>
-                    </div>
-
-                    {/* Right Content Overlay */}
-                    <div className="absolute right-[5%] bottom-[15%] z-40 text-right text-white hidden lg:block">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.1 }}
-                        >
-                            <h2 className="text-4xl font-serif font-light leading-snug whitespace-pre-line">
-                                {slide.rightText}
-                            </h2>
-                        </motion.div>
-                    </div>
-                </motion.div>
+        <section className="relative mt-[70px] lg:mt-[140px] h-[75vh] lg:h-[80vh] w-full overflow-hidden flex items-center justify-center transition-colors duration-1000" style={{ backgroundColor: SLIDES[currentSlide].bgColor }}>
+            <AnimatePresence mode="wait">
+                <HeroSlide key={`slide-${currentSlide}`} slide={SLIDES[currentSlide]} />
             </AnimatePresence>
 
             {/* Navigation Arrows */}
-            <div className="absolute top-1/2 -translate-y-1/2 w-full px-6 flex justify-between z-30 pointer-events-none">
+            <div className="absolute top-1/2 -translate-y-1/2 w-full px-4 lg:px-6 flex justify-between z-30 pointer-events-none">
                 <button
                     onClick={prevSlide}
-                    className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
                 >
-                    <ArrowLeft className="w-6 h-6 group-active:scale-95 transition-transform" />
+                    <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6 group-active:scale-95 transition-transform" />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
                 >
-                    <ArrowRight className="w-6 h-6 group-active:scale-95 transition-transform" />
+                    <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 group-active:scale-95 transition-transform" />
                 </button>
             </div>
 
