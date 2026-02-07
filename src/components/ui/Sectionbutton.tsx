@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion, type Variants } from 'framer-motion'
 
 const Sectionbutton = ({ text, itemVariants }: { text: string, itemVariants?: Variants }) => {

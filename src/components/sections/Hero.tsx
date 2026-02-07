@@ -33,10 +33,6 @@ const SLIDES = [
     }
 ];
 
-interface SlideProps {
-    slide: typeof SLIDES[0];
-    direction: number;
-}
 
 const HeroSlide: React.FC<{ slide: typeof SLIDES[0] }> = ({ slide }) => {
     return (
@@ -136,15 +132,12 @@ const HeroSlide: React.FC<{ slide: typeof SLIDES[0] }> = ({ slide }) => {
 
 const Hero: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [direction, setDirection] = useState(0); // -1 for left, 1 for right
 
     const nextSlide = useCallback(() => {
-        setDirection(1);
         setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
     }, []);
 
     const prevSlide = useCallback(() => {
-        setDirection(-1);
         setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
     }, []);
 
@@ -184,7 +177,6 @@ const Hero: React.FC = () => {
                     <button
                         key={index}
                         onClick={() => {
-                            setDirection(index > currentSlide ? 1 : -1);
                             setCurrentSlide(index);
                         }}
                         className={`transition-all duration-500 rounded-full h-1 ${currentSlide === index ? 'w-10 bg-white' : 'w-2 bg-white/30 hover:bg-white/60'

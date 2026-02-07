@@ -56,7 +56,6 @@ const JourneyCard = ({ step, index, total, progress }: { step: typeof journeySte
     const range = [index * 0.25, (index + 1) * 0.25];
 
     const scale = useTransform(progress, [range[1], range[1] + 0.1], [1, targetScale]);
-    const opacity = useTransform(progress, [range[1], range[1] + 0.1], [1, 0.8]);
 
     return (
         <div className="sticky top-20 md:top-32 flex items-center justify-center mb-8 md:mb-12">
