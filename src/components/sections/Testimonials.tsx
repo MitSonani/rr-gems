@@ -116,14 +116,14 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-[#FAF8F5] py-24 px-4 overflow-hidden">
+        <section className="bg-[#FAF8F5] py-16 md:py-24 px-4 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="flex justify-center mb-2">
                         <Sectionbutton text="Customer Reviews" />
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-display text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-display text-gray-900 mb-6">
                         Words That <span className="text-[#FF8936] italic serif font-serif">Made Us Smile</span>
                     </h2>
 
@@ -143,7 +143,7 @@ const Testimonials = () => {
                         <div className="w-full h-full border-t-2 border-dashed border-[#FF8936]/40" />
                     </div>
 
-                    <div className="relative h-[550px]">
+                    <div className="relative h-[500px] md:h-[550px]">
                         <AnimatePresence initial={false} custom={direction}>
                             <motion.div
                                 key={page}
@@ -153,53 +153,55 @@ const Testimonials = () => {
                                 animate="center"
                                 exit="exit"
                                 transition={{
-                                    x: { type: "spring", stiffness: 300, damping: 30 },
-                                    opacity: { duration: 0.2 },
-                                    scale: { duration: 0.4 }
+                                    x: { type: "spring", stiffness: window.innerWidth < 1024 ? 400 : 300, damping: window.innerWidth < 1024 ? 40 : 30 },
+                                    opacity: { duration: window.innerWidth < 1024 ? 0.15 : 0.2 },
+                                    scale: { duration: window.innerWidth < 1024 ? 0.25 : 0.4 }
                                 }}
                                 className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 z-10"
                             >
-                                {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, offset) => (
-                                    <div
-                                        key={testimonial.id}
-                                        onMouseEnter={() => setIsPaused(true)}
-                                        onMouseLeave={() => setIsPaused(false)}
-                                        className={`relative flex flex-col items-center ${offset > 0 ? 'hidden lg:flex' : 'flex'} ${offset === 1 ? 'md:flex' : ''}`}
-                                    >
-                                        <div className="relative mb-[-60px] z-20">
-                                            <div className="w-40 h-40 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
-                                                <img
-                                                    src={testimonial.image}
-                                                    alt={testimonial.author}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="w-full bg-[#FFF9F3] border border-[#FF8936]/30 rounded-[32px] pt-20 p-8 flex flex-col min-h-[400px]">
-                                            <div className="absolute top-[92px] left-8 w-4 h-4 bg-[#FF8936] rotate-45" />
-                                            <div className="absolute top-[92px] right-8 w-4 h-4 bg-[#FF8936] rotate-45" />
-
-                                            <div className="flex-grow mb-8 pt-4">
-                                                <p className="text-gray-600 text-center leading-relaxed font-sans text-[15px]">
-                                                    {testimonial.text}
-                                                </p>
+                                <AnimatePresence mode="popLayout">
+                                    {testimonials.slice(currentIndex, currentIndex + (window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3)).map((testimonial, offset) => (
+                                        <div
+                                            key={testimonial.id}
+                                            onMouseEnter={() => setIsPaused(true)}
+                                            onMouseLeave={() => setIsPaused(false)}
+                                            className={`relative flex flex-col items-center ${offset > 0 ? 'hidden lg:flex' : 'flex'} ${offset === 1 ? 'md:flex' : ''}`}
+                                        >
+                                            <div className="relative mb-[-60px] z-20">
+                                                <div className="w-40 h-40 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
+                                                    <img
+                                                        src={testimonial.image}
+                                                        alt={testimonial.author}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
                                             </div>
 
-                                            <div className="mt-auto pt-6 border-t border-[#FF8936]/10 flex items-center justify-between">
-                                                <span className="text-xl font-display text-gray-900 font-semibold">{testimonial.author}</span>
-                                                <div className="flex gap-0.5">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <Star
-                                                            key={i}
-                                                            className="w-4 h-4 fill-[#FF8936] text-[#FF8936]"
-                                                        />
-                                                    ))}
+                                            <div className="w-full bg-[#FFF9F3] border border-[#FF8936]/30 rounded-[32px] pt-20 p-6 md:p-8 flex flex-col min-h-[350px] md:min-h-[400px]">
+                                                <div className="absolute top-[92px] left-8 w-4 h-4 bg-[#FF8936] rotate-45" />
+                                                <div className="absolute top-[92px] right-8 w-4 h-4 bg-[#FF8936] rotate-45" />
+
+                                                <div className="flex-grow mb-8 pt-4">
+                                                    <p className="text-gray-600 text-center leading-relaxed font-sans text-[15px]">
+                                                        {testimonial.text}
+                                                    </p>
+                                                </div>
+
+                                                <div className="mt-auto pt-6 border-t border-[#FF8936]/10 flex items-center justify-between">
+                                                    <span className="text-xl font-display text-gray-900 font-semibold">{testimonial.author}</span>
+                                                    <div className="flex gap-0.5">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <Star
+                                                                key={i}
+                                                                className="w-4 h-4 fill-[#FF8936] text-[#FF8936]"
+                                                            />
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </AnimatePresence>
                             </motion.div>
                         </AnimatePresence>
                     </div>

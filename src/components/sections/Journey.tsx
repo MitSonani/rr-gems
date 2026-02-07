@@ -59,41 +59,38 @@ const JourneyCard = ({ step, index, total, progress }: { step: typeof journeySte
     const opacity = useTransform(progress, [range[1], range[1] + 0.1], [1, 0.8]);
 
     return (
-        <div className="sticky top-32 flex items-center justify-center mb-12">
+        <div className="sticky top-20 md:top-32 flex items-center justify-center mb-8 md:mb-12">
             <motion.div
                 style={{ scale, opacity, backgroundColor: step.backgroundColor }}
-                className="w-full flex max-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
+                className="w-full flex flex-col md:flex-row max-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
             >
-                {/* Left Side: Content */}
-                <div className="p-8 md:p-16 flex flex-col justify-center">
-                    <div className="flex gap-8 items-center">
-                        {/* Vertical Timeline Column */}``
-                        <div className="flex flex-col items-center">
+                {/* Side: Content */}
+                <div className="p-8 md:p-16 flex flex-col justify-center order-2 md:order-1">
+                    <div className="flex gap-6 md:gap-8 items-start md:items-center">
+                        {/* Vertical Timeline Column */}
+                        <div className="flex flex-col items-center mt-1 md:mt-0">
                             {step.progress}
-
                         </div>
 
                         <div className="flex flex-col">
                             <h3
-                                className="text-3xl font-very-vouge-display mb-6"
+                                className="text-2xl md:text-3xl font-very-vouge-display mb-4 md:mb-6"
                                 style={{ color: step.color }}
                             >
                                 {step.title}
                             </h3>
-                            <p className="text-[#666666] leading-relaxed text-lg max-w-sm">
+                            <p className="text-[#666666] leading-relaxed text-base md:text-lg max-w-sm">
                                 {step.description}
                             </p>
                         </div>
                     </div>
                 </div>
 
-                {/* Right Side: Image */}
-                <div className="md:w-[550px] md:h-[500px] overflow-hidden ml-auto">
+                {/* Side: Image */}
+                <div className="w-full md:w-[550px] aspect-[4/3] md:h-[500px] overflow-hidden order-1 md:order-2">
                     <motion.img
                         src={step.image}
                         alt={step.title}
-                        width={550}
-                        height={500}
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/5 pointer-events-none" />
@@ -118,13 +115,13 @@ const Journey: React.FC = () => {
                     <Sectionbutton text="From Earth to Elegance" />
                 </div>
                 <motion.div
-                    className="text-center mb-30 flex flex-col justify-center items-center"
+                    className="text-center mb-12 md:mb-30 flex flex-col justify-center items-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-[52px] leading-tight mb-4 text-black">
+                    <h2 className="text-3xl md:text-[52px] leading-tight mb-4 text-black px-4">
                         The Journey of an <span className="text-[#FF8936] italic">RR Masterpiece</span>
                     </h2>
                     <div className="flex justify-center">

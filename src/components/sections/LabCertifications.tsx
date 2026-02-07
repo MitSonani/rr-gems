@@ -118,7 +118,7 @@ const LabCertifications: React.FC = () => {
 
 
             <motion.h2
-                className="text-[52px] leading-tight mb-4 text-center px-4"
+                className="text-3xl md:text-[52px] leading-tight mb-4 text-center px-4"
                 variants={itemVariants}
             >
                 <span className="text-[#FF8936] italic font-very-vouge-display">Lab Certified</span>{' '}
@@ -133,29 +133,20 @@ const LabCertifications: React.FC = () => {
             </motion.div>
 
             <motion.div
-                className="max-w-4xl text-center mb-16 px-4"
+                className="max-w-4xl text-center mb-16 px-6"
                 variants={itemVariants}
             >
-                <p className="text-[#888888] text-[32px] font-very-vouge-display leading-[1.4] mb-2">
-                    At RR Gems and Jewels, we believe that true beauty is
-                </p>
-                <p className="text-[#888888] text-[32px] font-very-vouge-display leading-[1.4] mb-2">
-                    rooted in transparency. Every gemstone in our collection
-                </p>
-                <p className="text-[#888888] text-[32px] font-very-vouge-display leading-[1.4] mb-2">
-                    is accompanied by a comprehensive certificate from
-                </p>
-                <p className="text-[#888888] text-[32px] font-very-vouge-display leading-[1.4]">
-                    world-renowned gemological laboratories.
+                <p className="text-[#888888] text-lg md:text-[32px] font-very-vouge-display leading-relaxed md:leading-[1.4] mb-2">
+                    At RR Gems and Jewels, we believe that true beauty is rooted in transparency. Every gemstone in our collection is accompanied by a comprehensive certificate from world-renowned gemological laboratories.
                 </p>
             </motion.div>
 
             <motion.div
-                className="w-full max-w-5xl border border-[#E5E7EB] rounded-sm overflow-hidden grid grid-cols-1 md:grid-cols-4"
+                className="w-full max-w-5xl border border-[#E5E7EB] rounded-sm overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
                 variants={containerVariants}
             >
                 <motion.div
-                    className="border-b md:border-b-0 md:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[160px]"
+                    className="border-b sm:border-b-0 sm:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[140px] md:min-h-[160px]"
                     variants={logoVariants}
                 >
                     <div className="flex flex-col items-center">
@@ -166,7 +157,7 @@ const LabCertifications: React.FC = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    className="border-b md:border-b-0 md:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[160px]"
+                    className="border-b lg:border-b-0 lg:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[140px] md:min-h-[160px]"
                     variants={logoVariants}
                 >
                     <div className="flex flex-col items-center">
@@ -177,7 +168,7 @@ const LabCertifications: React.FC = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    className="border-b md:border-b-0 md:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[160px]"
+                    className="border-b sm:border-b-0 sm:border-r border-[#E5E7EB] p-8 flex items-center justify-center min-h-[140px] md:min-h-[160px]"
                     variants={logoVariants}
                 >
                     <div className="flex flex-col items-center">
@@ -188,7 +179,7 @@ const LabCertifications: React.FC = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    className="p-8 flex items-center justify-center min-h-[160px]"
+                    className="p-8 flex items-center justify-center min-h-[140px] md:min-h-[160px]"
                     variants={logoVariants}
                 >
                     <div className="flex flex-col items-center">

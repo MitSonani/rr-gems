@@ -19,7 +19,7 @@ const SLIDES = [
         description: "Exquisite diamonds and sapphires, hand-picked for their brilliance and clarity. Timeless elegance crafted for the modern connoisseur.",
         rightText: "Timeless\nElegance\nHand Crafted",
         image: hero1,
-        bgColor: "#F5F5F5",
+        bgColor: "#FFE8D7",
         buttonText: "View Collection"
     },
     {
@@ -28,7 +28,7 @@ const SLIDES = [
         description: "Experience the regal charm of our ruby and gold collection. Heritage designs that tell a story of luxury and tradition.",
         rightText: "Regal\nHeritage\nGold & Rubies",
         image: hero1,
-        bgColor: "#F5F5F5",
+        bgColor: "#FFE8D7",
         buttonText: "Shop Heritage"
     }
 ];
@@ -84,14 +84,14 @@ const Hero: React.FC = () => {
                     <div className="relative z-10 w-full h-full flex items-center justify-center">
                         <motion.div
                             initial={{
-                                clipPath: 'inset(10% 20% 10% 20% round 300px 300px 0 0)',
+                                clipPath: 'inset(2% 35% 2% 35% round 300px 300px 0 0)',
                             }}
                             animate={{
                                 clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0 0)',
                             }}
                             transition={{
                                 duration: 1.2,
-                                delay: 2.2, // Starts closer to gate completion
+                                delay: 2.2,
                                 ease: [0.77, 0, 0.175, 1]
                             }}
                             className="relative w-full h-full flex items-center justify-center overflow-hidden bg-transparent"
@@ -124,13 +124,6 @@ const Hero: React.FC = () => {
                                 style={{ backgroundColor: slide.bgColor || '#1A1A1A' }}
                             />
 
-                            {/* Subtle Arch Border */}
-                            <motion.div
-                                initial={{ opacity: 0.4 }}
-                                animate={{ opacity: 0 }}
-                                transition={{ duration: 0.6, delay: 2.3 }}
-                                className="absolute inset-[10%_20%_10%_20%] border border-white/40 rounded-t-full pointer-events-none z-30 flex items-center justify-center"
-                            />
                         </motion.div>
                     </div>
 

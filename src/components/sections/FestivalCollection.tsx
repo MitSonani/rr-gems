@@ -49,13 +49,13 @@ const FestivalCollection: React.FC = () => {
             const timer = setTimeout(() => {
                 setIsTransitioning(false);
                 setCurrentIndex(0);
-            }, 800);
+            }, window.innerWidth < 1024 ? 400 : 800);
             return () => clearTimeout(timer);
         }
     }, [currentIndex]);
 
     return (
-        <section className="bg-[#FFE5E1] py-30 px-4 overflow-hidden">
+        <section className="bg-[#FFE5E1] py-16 md:py-24 lg:py-30 px-4 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
                 <div className="lg:w-auto text-left shrink-0">
                     <motion.h2
@@ -63,7 +63,7 @@ const FestivalCollection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-5xl md:text-6xl font-display text-gray-900 mb-8 leading-tight whitespace-nowrap"
+                        className="text-4xl md:text-5xl lg:text-6xl font-display text-gray-900 mb-6 lg:mb-8 leading-tight lg:whitespace-nowrap text-center lg:text-left"
                     >
                         Festival Collection
                     </motion.h2>
@@ -72,7 +72,7 @@ const FestivalCollection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-500 text-lg md:text-xl max-w-md mb-10 leading-relaxed"
+                        className="text-gray-500 text-base md:text-lg lg:text-xl max-w-md mb-8 lg:mb-10 leading-relaxed text-center lg:text-left mx-auto lg:mx-0"
                     >
                         From certified natural gemstones to sacred Rudraksha, discover treasures crafted with purity and purpose.
                     </motion.p>
@@ -81,7 +81,7 @@ const FestivalCollection: React.FC = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.4 }}
-                        className="flex items-center mt-4 gap-3 bg-white text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-all duration-300 border border-gray-100 shadow-sm group"
+                        className="flex items-center mx-auto lg:mx-0 mt-4 gap-3 bg-white text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-all duration-300 border border-gray-100 shadow-sm group"
                     >
                         Discover All
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -97,7 +97,7 @@ const FestivalCollection: React.FC = () => {
                                 : `calc(-${currentIndex * 100}% - ${currentIndex * 24}px)`
                         }}
                         transition={isTransitioning ? {
-                            duration: 0.8,
+                            duration: window.innerWidth < 1024 ? 0.4 : 0.8,
                             ease: [0.32, 0.72, 0, 1]
                         } : { duration: 0 }}
                     >

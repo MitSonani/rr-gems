@@ -3,14 +3,12 @@ import { motion } from 'framer-motion';
 import buybackWoman from '../../assets/buyback-woman.png';
 import Sunburst from '../../assets/common/sunBrust';
 
-
-
 const ReturnPolicy: React.FC = () => {
     return (
-        <section className="bg-[#FAF8F5] py-12 px-4 md:px-8">
-            <div className="py-20 max-h-[600px] px-10 mx-auto overflow-hidden flex flex-col md:flex-row">
+        <section className="bg-white py-12 md:py-24 px-4 overflow-hidden mb-12 md:mb-48">
+            <div className="py-12 md:py-20 md:max-h-[600px] px-4 md:px-10 mx-auto overflow-hidden flex flex-col md:flex-row bg-[#FAF8F5]">
                 {/* Left Content Section */}
-                <div className="flex-[1.2] bg-[#FFE3CF] p-8 md:p-16 flex flex-col justify-center overflow-hidden relative">
+                <div className="flex-[1.2] bg-[#FFE3CF] p-8 md:p-16 flex flex-col justify-center overflow-hidden relative order-2 md:order-1">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +16,7 @@ const ReturnPolicy: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="relative z-10"
                     >
-                        <h2 className="text-[68px] md:text-6xl font-very-vouge-display leading-tight mb-6">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-very-vouge-display leading-tight mb-6">
                             <span className="text-[#FF8936] italic">Get 80% back</span>{' '}
                             <span className="text-[#2C3E50]">if you ever return your gem!</span>
                         </h2>
@@ -42,20 +40,18 @@ const ReturnPolicy: React.FC = () => {
 
                     {/* Decorative Sunburst (Bottom Left) */}
                     <div className='absolute bottom-[40px] left-[75%] -translate-x-1/2'><Sunburst color="#FF8936" /></div>
-
                 </div>
 
                 {/* Right Image Section */}
-                <div className="bg-[#F5AE8B] flex-[0.8]  relative ">
+                <div className="bg-[#F5AE8B] flex-[0.8] relative min-h-[300px] md:min-h-0 order-1 md:order-2">
                     <img
                         src={buybackWoman}
                         alt="Elegance and Trust"
-                        className="w-full h-full object-cover absolute right-[120px]"
+                        className="w-full h-full object-cover absolute md:right-[120px] left-0 md:left-auto"
                     />
 
                     {/* Decorative Sunburst (Top Right) */}
-                    <div className='absolute top-[60px] right-[50px] '><Sunburst color="#FF8936" /></div>
-
+                    <div className='absolute top-[40px] md:top-[60px] right-[20px] md:right-[50px] '><Sunburst color="#FF8936" /></div>
                 </div>
             </div>
         </section>
