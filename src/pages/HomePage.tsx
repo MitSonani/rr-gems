@@ -9,6 +9,8 @@ import Testimonials from '../components/sections/Testimonials';
 import Hero from '../components/sections/Hero';
 import GemstoneGift from '../components/sections/GemstoneGift';
 import TrustStats from '../components/sections/TrustStats';
+import ProductCategories from '../components/sections/ProductCategories';
+
 
 export const HomePage: React.FC = () => {
     return (
@@ -18,6 +20,7 @@ export const HomePage: React.FC = () => {
             <TrustStats />
             <LabCertifications />
             <Journey />
+            <ProductCategories />
             <ReturnPolicy />
             <GemstonesForPurpose />
             <FestivalCollection />
