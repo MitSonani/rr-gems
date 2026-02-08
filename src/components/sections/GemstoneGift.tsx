@@ -100,7 +100,7 @@ const GemstoneGift: React.FC = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.8, duration: 1 }}
-                                className="text-[#FF8936] italic font-display inline-block"
+                                className="text-[#e67a2e] italic font-display"
                             >
                                 gift to the soul.
                             </motion.span>
@@ -108,7 +108,7 @@ const GemstoneGift: React.FC = () => {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-500 text-base md:text-lg leading-relaxed mb-10 max-w-xl font-sans"
+                            className="text-[#4D4D4D] text-base md:text-lg leading-relaxed mb-10 max-w-xl font-sans"
                         >
                             RR Gems & Jewels offer handpicked Rashi Ratna, custom-made gold pieces, and expert guidance to help you align with your spiritual and planetary path. Every gem we provide reflects authenticity, tradition, and positive transformation.
                         </motion.p>
@@ -121,7 +121,7 @@ const GemstoneGift: React.FC = () => {
                                     boxShadow: "0 20px 25px -5px rgba(255, 137, 54, 0.4)"
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-[#FF8936]  text-white px-6 py-3 font-medium flex items-center gap-3 group transition-all duration-300 rounded-xs"
+                                className="bg-[#e67a2e] text-white px-6 py-3 font-medium flex items-center gap-3 group transition-all duration-300 rounded-xs"
                             >
                                 Discover Gemstones
                                 <motion.div

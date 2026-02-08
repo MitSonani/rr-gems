@@ -111,7 +111,7 @@ const ExclusiveCollection: React.FC = () => {
                     <div className="mb-2 flex justify-center items-center">
                         <Sectionbutton text='Gemstone Variety' />
                     </div>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-gray-900 leading-tight">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-[#1A1A1A] leading-tight">
                         Gemstones <span className="text-[#FF8936] italic serif font-serif">Exclusive Collection</span>
                     </h2>
                     <div className="flex justify-center items-center gap-4 my-6">

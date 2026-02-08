@@ -61,11 +61,11 @@ const JourneyCard = ({ step, index, total, progress }: { step: typeof journeySte
         <div className="sticky top-20 md:top-32 flex items-center justify-center mb-8 md:mb-12">
             <motion.div
                 style={{ scale, backgroundColor: step.backgroundColor }}
-                className="w-full md:flex-row max-w-[1200px] min-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
+                className="w-full flex flex-col md:flex-row max-w-[1200px] overflow-hidden border border-[#1A1A1A]/5 gap-0"
             >
 
-                <div className='flex gap-20 '>
-                    <div className="p-8 md:p-16 flex flex-col justify-center">
+                <div className='flex flex-col md:flex-row gap-8 md:gap-20 '>
+                    <div className="p-6 md:p-16 flex flex-col justify-center">
                         <div className="flex gap-6 md:gap-8 items-start md:items-center">
                             <div className="flex flex-col items-center mt-1 md:mt-0">
                                 {step.progress}
@@ -84,7 +84,7 @@ const JourneyCard = ({ step, index, total, progress }: { step: typeof journeySte
                         </div>
                     </div>
 
-                    <div className="w-full md:w-[570px] md:h-[500px] overflow-hidden ">
+                    <div className="w-full md:w-[570px] h-[300px] md:h-[500px] overflow-hidden ">
                         <motion.img
                             src={step.image}
                             alt={step.title}

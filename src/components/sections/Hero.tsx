@@ -50,7 +50,7 @@ const HeroSlide: React.FC<{ slide: typeof SLIDES[0] }> = ({ slide }) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 0.25, scale: 1 }}
                         transition={{ duration: 1.2, delay: 0.2 }}
-                        className="text-[14vw] lg:text-[14vw] font-serif font-light text-white leading-none tracking-tight select-none pointer-events-none text-center transform-gpu"
+                        className="text-[14vw] md:text-[14vw] font-serif font-light text-white leading-none tracking-tight select-none pointer-events-none text-center transform-gpu"
                     >
                         {slide.title}
                     </motion.h1>
@@ -92,7 +92,7 @@ const HeroSlide: React.FC<{ slide: typeof SLIDES[0] }> = ({ slide }) => {
                 {/* Content Overlays */}
                 <div className="absolute inset-0 z-40  pointer-events-none">
                     {/* Left Content */}
-                    <div className="absolute left-[5%] right-[5%] lg:right-auto bottom-[15%] lg:max-w-[320px] flex flex-col items-center lg:items-start text-center lg:text-left pointer-events-auto px-6 py-4 bg-black/10 lg:bg-transparent rounded-xl backdrop-blur-[2px] lg:backdrop-blur-0">
+                    <div className="absolute left-[5%] right-[5%] lg:right-auto bottom-[12%] lg:bottom-[15%] lg:max-w-[320px] flex flex-col items-center lg:items-start text-center lg:text-left pointer-events-auto px-6 py-6 bg-black/20 lg:bg-transparent rounded-2xl backdrop-blur-md lg:backdrop-blur-0 border border-white/10 lg:border-none">
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
 
 
     return (
-        <section className="relative mt-[70px] lg:mt-[140px] h-[75vh] lg:h-[80vh] w-full overflow-hidden flex items-center justify-center transition-colors duration-1000" style={{ backgroundColor: SLIDES[currentSlide].bgColor }}>
+        <section className="relative mt-[70px] lg:mt-[140px] h-[75vh] lg:h-[80vh] w-full overflow-hidden flex items-center justify-center transition-colors duration-1000 isolate" style={{ backgroundColor: SLIDES[currentSlide].bgColor }}>
             <AnimatePresence mode="wait">
                 <HeroSlide key={`slide-${currentSlide}`} slide={SLIDES[currentSlide]} />
             </AnimatePresence>
@@ -159,13 +159,13 @@ const Hero: React.FC = () => {
             <div className="absolute top-1/2 -translate-y-1/2 w-full px-4 lg:px-6 flex justify-between z-30 pointer-events-none">
                 <button
                     onClick={prevSlide}
-                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-black/20 lg:bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
                 >
                     <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6 group-active:scale-95 transition-transform" />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-black/20 lg:bg-white/10 backdrop-blur-sm pointer-events-auto hover:bg-white hover:text-black transition-all group"
                 >
                     <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 group-active:scale-95 transition-transform" />
                 </button>

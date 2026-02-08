@@ -56,14 +56,14 @@ const FestivalCollection: React.FC = () => {
 
     return (
         <section className="bg-[#FFE5E1] py-16 md:py-24 lg:py-30 px-4 overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                 <div className="lg:w-auto text-left shrink-0">
                     <motion.h2
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-display text-gray-900 mb-6 lg:mb-8 leading-tight lg:whitespace-nowrap text-center lg:text-left"
+                        className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A1A1A] mb-6 lg:mb-8 leading-tight lg:whitespace-nowrap text-center lg:text-left"
                     >
                         Festival Collection
                     </motion.h2>
@@ -72,7 +72,7 @@ const FestivalCollection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-500 text-base md:text-lg lg:text-xl max-w-md mb-8 lg:mb-10 leading-relaxed text-center lg:text-left mx-auto lg:mx-0"
+                        className="text-[#555555] text-base md:text-lg lg:text-xl max-w-md mb-8 lg:mb-10 leading-relaxed text-center lg:text-left mx-auto lg:mx-0"
                     >
                         From certified natural gemstones to sacred Rudraksha, discover treasures crafted with purity and purpose.
                     </motion.p>

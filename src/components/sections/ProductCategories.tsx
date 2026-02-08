@@ -72,7 +72,7 @@ const ProductCategories: React.FC = () => {
                                     key={category.id}
                                     variants={itemVariants}
                                     onMouseEnter={() => setActiveIndex(index)}
-                                    className={`relative group cursor-pointer transition-all duration-300 px-8 py-10 border-b border-[#F0F0F0] last:border-0 ${isActive ? 'bg-[#FFEFE6]' : 'bg-transparent'
+                                    className={`relative group cursor-pointer transition-all duration-300 px-6 py-6 md:px-8 md:py-10 border-b border-[#F0F0F0] last:border-0 ${isActive ? 'bg-[#FFEFE6]' : 'bg-transparent'
                                         }`}
                                 >
                                     <div className="flex items-center justify-between">

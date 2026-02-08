@@ -57,7 +57,7 @@ const GemstonesForPurpose: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-3xl md:text-6xl lg:text-[75px] font-display text-gray-900 mb-6 leading-tight"
+                    className="text-3xl md:text-6xl lg:text-[75px] font-display text-[#191919] mb-6 leading-tight"
                 >
                     Gemstones <span className="text-[#FF8936] italic font-display">For Purposes</span>
                 </motion.h2>
@@ -80,7 +80,7 @@ const GemstonesForPurpose: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 }}
                     style={{ marginBottom: "40px" }}
-                    className="text-gray-500 text-base md:text-xl max-w-2xl leading-relaxed"
+                    className="text-[#555555] text-base md:text-xl max-w-2xl leading-relaxed"
                 >
                     Find the perfect gem aligned with your needs and desires.
                 </motion.p>

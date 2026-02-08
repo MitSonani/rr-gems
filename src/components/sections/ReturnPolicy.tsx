@@ -17,11 +17,11 @@ const ReturnPolicy: React.FC = () => {
                         className="relative z-10"
                     >
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-very-vouge-display leading-tight mb-6">
-                            <span className="text-[#FF8936] italic">Get 80% back</span>{' '}
-                            <span className="text-[#2C3E50]">if you ever return your gem!</span>
+                            <span className="text-[#e67a2e] italic">Get 80% back</span>{' '}
+                            <span className="text-[#1A1A1A]">if you ever return your gem!</span>
                         </h2>
 
-                        <p className="text-[#666666] text-lg leading-relaxed mb-10 max-w-md">
+                        <p className="text-[#2d2d2d] text-base md:text-lg leading-relaxed mb-10 max-w-md">
                             Your trust means everything. If your gem doesn't match your energy,
                             even after years, we'll give you 80% back, no questions, no hassle.
                         </p>
