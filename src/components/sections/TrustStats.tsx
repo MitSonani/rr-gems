@@ -22,7 +22,7 @@ const StatBlock: React.FC<StatBlockProps> = ({ title, value, description, index 
             transition: {
                 duration: 0.8,
                 ease: "easeOut",
-                // delay: index * 0.1
+                delay: index * 0.1
             }
         }
     };
