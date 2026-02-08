@@ -7,11 +7,13 @@ import FestivalCollection from '../components/sections/FestivalCollection';
 import ExclusiveCollection from '../components/sections/ExclusiveCollection';
 import Testimonials from '../components/sections/Testimonials';
 import Hero from '../components/sections/Hero';
+import GemstoneGift from '../components/sections/GemstoneGift';
 
 export const HomePage: React.FC = () => {
     return (
         <>
             <Hero />
+            <GemstoneGift />
             <LabCertifications />
             <Journey />
             <ReturnPolicy />
