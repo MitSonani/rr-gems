@@ -8,12 +8,14 @@ import ExclusiveCollection from '../components/sections/ExclusiveCollection';
 import Testimonials from '../components/sections/Testimonials';
 import Hero from '../components/sections/Hero';
 import GemstoneGift from '../components/sections/GemstoneGift';
+import TrustStats from '../components/sections/TrustStats';
 
 export const HomePage: React.FC = () => {
     return (
         <>
             <Hero />
             <GemstoneGift />
+            <TrustStats />
             <LabCertifications />
             <Journey />
             <ReturnPolicy />
