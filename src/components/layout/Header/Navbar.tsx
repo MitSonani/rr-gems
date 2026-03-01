@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-    { label: 'Home', href: '/', active: true },
+    { label: 'Home', href: '/' },
     { label: 'Gemstone', href: '/gemstone' },
     { label: 'Jewellery', href: '/jewellery' },
     { label: 'Other Products', href: '/other-products' },
@@ -41,23 +41,26 @@ export const Navbar: React.FC = () => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-[24px]">
-                    {navItems.map((item) => (
-                        <a
-                            key={item.label}
-                            href={item.href}
-                            className={cn(
-                                "text-sm font-medium tracking-wide transition-colors duration-200 relative py-1",
-                                item.active
-                                    ? "text-[#F97316]"
-                                    : "text-slate-600 hover:text-[#F97316]"
-                            )}
-                        >
-                            {item.label}
-                            {item.active && (
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#F97316]" />
-                            )}
-                        </a>
-                    ))}
+                    {navItems.map((item) => {
+                        const isActive = window.location.pathname === item.href;
+                        return (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className={cn(
+                                    "text-sm font-medium tracking-wide transition-colors duration-200 relative py-1",
+                                    isActive
+                                        ? "text-[#F97316]"
+                                        : "text-slate-600 hover:text-[#F97316]"
+                                )}
+                            >
+                                {item.label}
+                                {isActive && (
+                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#F97316]" />
+                                )}
+                            </a>
+                        )
+                    })}
                 </div>
 
                 {/* Desktop Icons */}
@@ -110,21 +113,24 @@ export const Navbar: React.FC = () => {
                             </div>
 
                             <div className="flex flex-col p-6 gap-6">
-                                {navItems.map((item) => (
-                                    <a
-                                        key={item.label}
-                                        href={item.href}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className={cn(
-                                            "text-lg font-medium tracking-wide transition-colors",
-                                            item.active
-                                                ? "text-[#F97316]"
-                                                : "text-slate-600"
-                                        )}
-                                    >
-                                        {item.label}
-                                    </a>
-                                ))}
+                                {navItems.map((item) => {
+                                    const isActive = window.location.pathname === item.href;
+                                    return (
+                                        <a
+                                            key={item.label}
+                                            href={item.href}
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className={cn(
+                                                "text-lg font-medium tracking-wide transition-colors",
+                                                isActive
+                                                    ? "text-[#F97316]"
+                                                    : "text-slate-600"
+                                            )}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    )
+                                })}
                             </div>
 
                             <div className="mt-auto p-6 border-t border-slate-100 flex items-center justify-around text-slate-600">

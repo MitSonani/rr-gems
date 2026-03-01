@@ -19,13 +19,20 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
+        skin: '#FAE9DF',
+        "neutrals3-nutral": "var(--neutrals3-nutral)",
+        "neutrals6-stroke": "var(--neutrals6-stroke)",
+        orange: "var(--orange)",
       },
       fontFamily: {
         // Brand fonts
         display: ['"Very Vogue Display"', 'serif'],
         sans: ['"Very Vogue Text"', 'Inter', 'system-ui', 'sans-serif'],
         inter: ['Inter', 'system-ui', 'sans-serif'],
+        "body-16-m": "var(--body-16-m-font-family)",
+        "body-16-SM": "var(--body-16-SM-font-family)",
+        "body-18-m": "var(--body-18-m-font-family)",
       }
     },
   },
