@@ -8,6 +8,13 @@ import YellowSaphire from "/assets/PopularGem/yellow-ring.png";
 import YellowSaphireVector from "/assets/PopularGem/yellow-ring-back-vector.svg";
 import BlueSaphire from "/assets/PopularGem/blue-ring.png";
 import BlueSaphireVector from "/assets/PopularGem/blue-ring-vector.svg";
+import CatEye from "/assets/PopularGem/cat-eyes.png";
+import HoneyBrown from "/assets/PopularGem/Hessonite.png";
+import HoneyBrownVector from "/assets/PopularGem/hessonite-vector.svg";
+import RedCoral from "/assets/PopularGem/red-coral.png";
+import RedCoralVector from "/assets/PopularGem/red-coral-ring-vector.svg";
+import Pearl from "/assets/PopularGem/pearl-ring.png";
+import PearlVector from "/assets/PopularGem/pearl-ring-vector.svg";
 
 type GemItem = {
     englishName: string;
@@ -75,6 +82,58 @@ const gemsData: GemItem[] = [
         image: BlueSaphire,
         vector: BlueSaphireVector,
         bgCircleHex: "#DCF1FF",
+    },
+    {
+        englishName: "Cat's Eye",
+        hindiName: "लहसुनिया",
+        upperName: "LEHSUNIA",
+        description: "Refuge from evil, spiritual realization, and healing. Known for its distinctive chatoyancy effect — its mysterious inner glow mirrors the eye of a cat.",
+        colorHex: "#78B464",
+        colorName: "Olive Green",
+        planetIcon: StarIcon,
+        planetName: "Ketu (केतु)",
+        image: CatEye,
+        vector: GreenRingVector,
+        bgCircleHex: "#DCFFD1",
+    },
+    {
+        englishName: "Hessonite",
+        hindiName: "गोमेद",
+        upperName: "GOMED",
+        description: "Erases Rahu dosha, brings clarity, courtroom victory, and political success. A powerful stone for those in law, politics, media, or facing delays in life.",
+        colorHex: "#78B464",
+        colorName: "Honey Brown",
+        planetIcon: StarIcon,
+        planetName: "Rahu (राहु)",
+        image: HoneyBrown,
+        vector: HoneyBrownVector,
+        bgCircleHex: "#FFF7E9",
+    },
+    {
+        englishName: "Red Coral",
+        hindiName: "मूंगा",
+        upperName: "MUNGA",
+        description: "Bravery, energy, strength, and triumph over foes. Governed by Mars, this stone fuels ambition, drives courage, and helps overcome obstacles with fierce determination.",
+        colorHex: "#F04545",
+        colorName: "Coral Red",
+        planetIcon: StarIcon,
+        planetName: "Mars (मंगल)",
+        image: RedCoral,
+        vector: RedCoralVector,
+        bgCircleHex: "#FFDCE0",
+    },
+    {
+        englishName: "Pearl",
+        hindiName: "मोती",
+        upperName: "MOTI",
+        description: "Emotional poise, calmness, and harmony in relationships. Pearl is the gem of the Moon — soothes the mind, deepens intuition, and nurtures the heart's wisdom.",
+        colorHex: "#F0E7D5",
+        colorName: "Lustrous White",
+        planetIcon: StarIcon,
+        planetName: "Moon (चंद्र)",
+        image: Pearl,
+        vector: PearlVector,
+        bgCircleHex: "#FFF7E9",
     }
 ];
 
@@ -102,6 +161,8 @@ export default function PopularGemstone() {
             <div className="flex flex-col px-4 md:px-[60px] py-8 md:py-[60px] gap-10 lg:gap-0">
                 <GemRow leftGem={gemsData[0]} rightGem={gemsData[1]} />
                 <GemRow leftGem={gemsData[2]} rightGem={gemsData[3]} />
+                <GemRow leftGem={gemsData[4]} rightGem={gemsData[5]} />
+                <GemRow leftGem={gemsData[6]} rightGem={gemsData[7]} />
                 {/* Users can add more GemRow components here later */}
             </div>
         </div>
@@ -154,7 +215,7 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
             onMouseEnter={onHover}
         >
             {/* Image Box */}
-            <div className={`relative shrink-0 w-[280px] sm:w-[305px] h-[280px] sm:h-[305px] flex items-center justify-center z-10 ${isRightSide ? 'lg:order-2' : 'lg:order-1'} group`}>
+            <div className={`relative shrink-0 w-[280px] sm:w-[305px] h-[280px] sm:h-[305px] flex items-center justify-center z-10 order-1 ${isRightSide ? 'lg:order-2' : 'lg:order-1'} group`}>
                 {/* Background Vector */}
                 <img src={gem.vector} alt="vector" className={`absolute inset-0 w-full h-full object-contain pointer-events-none transition-transform duration-800 ease-in-out ${isExpanded ? 'rotate-45' : 'rotate-0'}`} />
 
@@ -180,13 +241,13 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
                 <img
                     src={gem.image}
                     alt={gem.englishName}
-                    className={`relative z-10 max-w-[210px] h-auto object-contain transition-transform duration-800 ease-in-out ${isExpanded ? 'scale-110 -translate-y-2' : 'scale-[0.85] translate-y-0'}`}
+                    className={`relative z-10 max-w-[180px] h-auto object-contain transition-transform duration-800 ease-in-out ${isExpanded ? 'scale-110 -translate-y-2' : 'scale-[0.85] translate-y-0'}`}
                 />
             </div>
 
             {/* Text Box Wrapper */}
             <div
-                className={`overflow-hidden transition-all duration-800 ease-in-out z-0 flex flex-col w-full lg:w-0 lg:opacity-0 ${isExpanded ? 'lg:!w-[480px] lg:!opacity-100' : ''} ${isRightSide ? 'order-1 lg:order-1' : 'order-2'}`}
+                className={`overflow-hidden transition-all duration-800 ease-in-out z-0 flex flex-col w-full lg:w-0 lg:opacity-0 ${isExpanded ? 'lg:!w-[480px] lg:!opacity-100' : ''} order-2 ${isRightSide ? 'lg:order-1' : 'lg:order-2'}`}
             >
                 <div className={`w-full lg:w-[480px] flex flex-col justify-center items-center lg:items-stretch h-auto lg:h-[305px] ${isRightSide ? 'lg:items-end lg:text-right lg:pr-6 text-center' : 'lg:items-start lg:text-left lg:pl-6 text-center'} pt-4 lg:pt-0`}>
 
@@ -194,11 +255,15 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
                     <div className="flex items-end justify-center lg:justify-start gap-[6px] lg:gap-[10px] mb-3 flex-wrap lg:whitespace-nowrap overflow-visible">
                         {isRightSide ? (
                             <>
-                                <span className="font-sans font-medium text-[16px] text-[#6C757D] mb-1">{gem.hindiName}</span>
-                                <span className="text-[#CED4DA] text-[18px] mb-1">•</span>
-                                <span className="font-sans font-medium text-[16px] text-[#6C757D] uppercase tracking-widest mb-1">{gem.upperName}</span>
-                                <span className="text-[#CED4DA] text-[18px] mb-1">•</span>
+                                <span className="hidden lg:inline font-sans font-medium text-[16px] text-[#6C757D] mb-1">{gem.hindiName}</span>
+                                <span className="hidden lg:inline text-[#CED4DA] text-[18px] mb-1">•</span>
+                                <span className="hidden lg:inline font-sans font-medium text-[16px] text-[#6C757D] uppercase tracking-widest mb-1">{gem.upperName}</span>
+                                <span className="hidden lg:inline text-[#CED4DA] text-[18px] mb-1">•</span>
                                 <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[52px] leading-[0.8] text-[#FF8936] pb-1">{gem.englishName}</h3>
+                                <span className="lg:hidden text-[#CED4DA] text-[18px] mb-1">•</span>
+                                <span className="lg:hidden font-sans font-medium text-[16px] text-[#6C757D] mb-1">{gem.hindiName}</span>
+                                <span className="lg:hidden text-[#CED4DA] text-[18px] mb-1">•</span>
+                                <span className="lg:hidden font-sans font-medium text-[16px] text-[#6C757D] uppercase tracking-widest mb-1">{gem.upperName}</span>
                             </>
                         ) : (
                             <>
@@ -222,9 +287,16 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
                     {/* Bottom Info */}
                     {isRightSide ? (
                         <div className="flex items-center gap-3 justify-center lg:justify-end whitespace-nowrap">
-                            <PlanetGroup gem={gem} />
-                            <span className="text-[#CED4DA] text-[16px] px-1">•</span>
-                            <ColorGroup gem={gem} />
+                            <div className="hidden lg:flex items-center gap-3">
+                                <PlanetGroup gem={gem} />
+                                <span className="text-[#CED4DA] text-[16px] px-1">•</span>
+                                <ColorGroup gem={gem} />
+                            </div>
+                            <div className="flex lg:hidden items-center gap-3">
+                                <ColorGroup gem={gem} />
+                                <span className="text-[#CED4DA] text-[16px] px-1">•</span>
+                                <PlanetGroup gem={gem} />
+                            </div>
                         </div>
                     ) : (
                         <div className="flex items-center gap-3 justify-center lg:justify-start whitespace-nowrap">
