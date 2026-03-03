@@ -12,8 +12,8 @@ export const FilterControlsSection = (): JSX.Element => {
     if (activeFilters.length === 0) return <></>;
 
     return (
-        <section className="flex items-center gap-6 px-[60px] py-[30px] w-full">
-            <h2 className="font-display font-normal text-black text-[24px] tracking-wide whitespace-nowrap">
+        <section className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 px-4 md:px-[60px] py-4 md:py-[30px] w-full ">
+            <h2 className="font-display font-normal text-black text-[18px] md:text-[24px] tracking-wide whitespace-nowrap">
                 Active Filters -
             </h2>
 
@@ -21,11 +21,11 @@ export const FilterControlsSection = (): JSX.Element => {
                 {activeFilters.map((filter) => (
                     <div
                         key={filter.id}
-                        className="flex items-center gap-3 px-5 py-2.5 bg-[#FCF2EB] border border-[#FF8936]"
+                        className="flex items-center gap-2 md:gap-3 px-3 md:px-5 py-1.5 md:py-2.5 bg-[#FCF2EB] border border-[#FF8936] shrink-0"
                         role="group"
                         aria-label={`Filter: ${filter.label}`}
                     >
-                        <span className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px]">
+                        <span className="font-['Open_Sans'] font-medium text-[#FF8936] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] tracking-[0px] whitespace-nowrap">
                             {filter.label}
                         </span>
 

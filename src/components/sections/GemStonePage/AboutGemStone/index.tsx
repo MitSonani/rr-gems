@@ -7,6 +7,7 @@ import ReadMoreGem from "./ReadMoreGem";
 import PopularGemstone from "./PopularGemStone";
 import Certification from "./Certification";
 import Categories from "./Categories";
+import BuyingGuide from "./BuyingGuide";
 
 export const AboutGemStone = (): JSX.Element => {
     const [activeTab, setActiveTab] = useState("About");
@@ -21,10 +22,10 @@ export const AboutGemStone = (): JSX.Element => {
     ];
 
     return (
-        <div className="flex flex-col w-full mx-auto relative bg-white py-[60px]">
-            <div className="flex flex-col relative w-full max-w-[1280px] mx-auto border border-[#CED4DA]">
+        <div className="flex flex-col w-full mx-auto relative bg-white py-8 md:py-[60px]">
+            <div className="flex flex-col relative w-full max-w-[1280px] mx-auto border border-[#CED4DA] overflow-hidden md:overflow-visible">
                 <nav
-                    className="flex gap-10 px-[60px] w-full border-b border-[#CED4DA] items-center"
+                    className="flex gap-6 md:gap-10 px-4 md:px-[60px] w-full border-b border-[#CED4DA] items-center overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                     role="navigation"
                     aria-label="Main navigation"
                 >
@@ -32,14 +33,14 @@ export const AboutGemStone = (): JSX.Element => {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.label)}
-                            className={`py-5 border-b-2 -mb-[1px] transition-colors outline-none cursor-pointer ${activeTab === tab.label
+                            className={`py-4 md:py-5 border-b-2 -mb-[1px] transition-colors outline-none cursor-pointer flex-shrink-0 ${activeTab === tab.label
                                 ? "border-[#FF8936]"
                                 : "border-transparent hover:border-[#CED4DA]"
                                 }`}
                             aria-current={activeTab === tab.label ? "page" : undefined}
                         >
                             <span
-                                className={`font-['Open_Sans'] text-[16px] font-medium leading-[24px] tracking-[0px] ${activeTab === tab.label
+                                className={`font-['Open_Sans'] text-[14px] md:text-[16px] font-medium leading-[24px] tracking-[0px] ${activeTab === tab.label
                                     ? "text-[#FF8936]"
                                     : "text-[#6C757D]"
                                     }`}
@@ -52,9 +53,9 @@ export const AboutGemStone = (): JSX.Element => {
 
                 {activeTab === "About" && (
                     <>
-                        <main className="flex w-full p-[60px]">
-                            <article className="flex w-full items-center justify-between gap-[60px]">
-                                <div className="flex flex-col flex-1 max-w-[550px] items-start gap-8">
+                        <main className="flex w-full p-4 md:p-[60px]">
+                            <article className="flex flex-col lg:flex-row w-full items-center justify-between gap-8 md:gap-[60px]">
+                                <div className="flex flex-col flex-1 max-w-full lg:max-w-[550px] items-start gap-6 md:gap-8">
                                     <header className="flex flex-col items-start gap-4">
                                         <div className="inline-flex items-center gap-3">
                                             <img
@@ -74,7 +75,7 @@ export const AboutGemStone = (): JSX.Element => {
                                             />
                                         </div>
 
-                                        <h1 className="font-display font-normal text-[56px] leading-tight">
+                                        <h1 className="font-display font-normal text-[36px] sm:text-[46px] md:text-[56px] leading-tight">
                                             <span className="text-black">About </span>
                                             <span className="text-[#FF8936] italic">Gemstone</span>
                                         </h1>
@@ -100,7 +101,7 @@ export const AboutGemStone = (): JSX.Element => {
                                 </div>
 
                                 <img
-                                    className="w-[450px] h-[450px] object-cover flex-shrink-0"
+                                    className="w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] object-cover flex-shrink-0"
                                     alt="Close-up of a hand wearing an elegant gemstone ring"
                                     src={rectangle3464296}
                                 />
@@ -133,6 +134,10 @@ export const AboutGemStone = (): JSX.Element => {
 
                 {activeTab === "Categories" && (
                     <Categories />
+                )}
+
+                {activeTab === "Buying Guide" && (
+                    <BuyingGuide />
                 )}
             </div>
         </div>

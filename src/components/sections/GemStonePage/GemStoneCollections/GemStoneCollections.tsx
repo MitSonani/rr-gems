@@ -14,14 +14,14 @@ export default function GemStoneCollections() {
                     <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />
                 </div>
                 <div className='flex flex-col items-center gap-[16px]'>
-                    <p className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[68px] leading-[100%] tracking-[0.02em] text-center text-[#000000]">
+                    <p className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[36px] sm:text-[46px] md:text-[68px] leading-[100%] tracking-[0.02em] text-center text-[#000000]">
                         Gemstones <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">Collection</span>
                     </p>
                     <div className="flex justify-center w-full">
                         <img src={TitleBelowLine} alt="Title Below Line" />
                     </div>
                 </div>
-                <div className='flex flex-wrap gap-[20px]'>
+                <div className='flex flex-wrap justify-center gap-[20px] px-4 xl:px-0'>
                     {
                         Array.from({ length: 12 }).map((_, index) => (
                             <GemStoneCardProduct key={index} />

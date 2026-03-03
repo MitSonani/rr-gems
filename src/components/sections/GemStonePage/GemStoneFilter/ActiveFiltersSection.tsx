@@ -49,9 +49,9 @@ export const ActiveFiltersSection = (): JSX.Element => {
     };
 
     return (
-        <section className="flex items-stretch w-full border-b border-[#CED4DA]">
+        <section className="flex flex-col md:flex-row items-stretch w-full border-b border-[#CED4DA]">
             {/* BY NAME SECTION */}
-            <div className="flex flex-col flex-1 p-[40px] border-r border-[#CED4DA]">
+            <div className="flex flex-col flex-1 p-4 md:p-[40px] border-b md:border-b-0 md:border-r border-[#CED4DA]">
                 <header className="flex items-center gap-4 w-full mb-8">
                     <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY NAME
@@ -83,7 +83,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
             </div>
 
             {/* BY TYPE SECTION */}
-            <div className="flex flex-col w-[320px] p-[40px] border-r border-[#CED4DA] shrink-0">
+            <div className="flex flex-col w-full md:w-[320px] p-4 md:p-[40px] border-b md:border-b-0 md:border-r border-[#CED4DA] shrink-0">
                 <header className="flex items-center gap-4 w-full mb-8">
                     <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY TYPE
@@ -115,7 +115,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
             </div>
 
             {/* BY COLOR SECTION */}
-            <div className="flex flex-col flex-1 p-[40px] pl-14">
+            <div className="flex flex-col flex-1 p-4 md:p-[40px] md:pl-14">
                 <header className="flex items-center gap-4 w-full mb-8">
                     <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY COLOR

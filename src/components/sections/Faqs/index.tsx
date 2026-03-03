@@ -89,7 +89,7 @@ export default function Faqs() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className='flex flex-col items-center gap-[16px]'
                 >
-                    <p className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[68px] leading-[100%] tracking-[0.02em] text-center text-[#000000]">
+                    <p className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[36px] sm:text-[46px] md:text-[68px] leading-[100%] tracking-[0.02em] text-center text-[#000000]">
                         Frequently Asked <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">Questions</span>
                     </p>
                     <div className="flex justify-center w-full">
@@ -102,9 +102,9 @@ export default function Faqs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="font-['Open_Sans'] font-medium text-[18px] leading-[28px] tracking-[0px] text-center text-[#6C757D] max-w-[466px]"
+                    className="font-['Open_Sans'] font-medium text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[0px] text-center text-[#6C757D] max-w-[466px] px-2"
                 >
-                    Everything you need to know about gemstones, <br /> certification, quality, and buying with confidence.
+                    Everything you need to know about gemstones, <br className="hidden md:block" /> certification, quality, and buying with confidence.
                 </motion.p>
 
                 <div className="max-w-[1143px] w-full">
@@ -119,17 +119,17 @@ export default function Faqs() {
                             <motion.div
                                 variants={itemVariants}
                                 key={faq.id}
-                                className="w-full flex flex-col py-[32px] border-b border-[#EAEAEA]"
+                                className="w-full flex flex-col py-6 md:py-[32px] border-b border-[#EAEAEA]"
                             >
                                 <div
                                     className="w-full flex items-center justify-between cursor-pointer group"
                                     onClick={() => setOpenIndex(index === openIndex ? null : index)}
                                 >
-                                    <div className="flex items-center gap-[32px]">
-                                        <span className="font-['Very_Vogue-Display',Helvetica] font-[400] text-[24px] text-[#FF8936] w-[24px]">
+                                    <div className="flex items-center gap-4 md:gap-[32px]">
+                                        <span className="font-['Very_Vogue-Display',Helvetica] font-[400] text-[18px] md:text-[24px] text-[#FF8936] w-[20px] md:w-[24px]">
                                             {faq.id}
                                         </span>
-                                        <span className="font-['Very_Vogue-Display',Helvetica] text-[28px] text-[#000000] leading-[1.2]">
+                                        <span className="font-['Very_Vogue-Display',Helvetica] text-[18px] md:text-[28px] text-[#000000] leading-[1.2]">
                                             {faq.question}
                                         </span>
                                     </div>
@@ -140,7 +140,7 @@ export default function Faqs() {
                                         <img
                                             src={openIndex === index ? FaqCloseIcon : FaqOpenIcon}
                                             alt={openIndex === index ? "Collapse FAQ" : "Expand FAQ"}
-                                            className="w-[40px] h-[40px] object-cover"
+                                            className="w-[24px] h-[24px] md:w-[40px] md:h-[40px] object-cover"
                                         />
                                     </motion.div>
                                 </div>
@@ -155,8 +155,8 @@ export default function Faqs() {
                                             className="overflow-hidden"
                                         >
                                             <div className="max-w-[1063px]">
-                                                <div className="mt-[24px] pl-[56px]">
-                                                    <div className="border-l-2 border-[#FF8936] pl-[24px]">
+                                                <div className="mt-4 md:mt-[24px] pl-6 md:pl-[56px]">
+                                                    <div className="border-l-2 border-[#FF8936] pl-4 md:pl-[24px]">
                                                         <p className="font-['Open_Sans'] font-medium text-[18px] leading-[28px] text-[#6C757D]">
                                                             {faq.answer}
                                                         </p>

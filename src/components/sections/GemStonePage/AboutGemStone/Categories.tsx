@@ -45,8 +45,8 @@ export const Categories = (): JSX.Element => {
     return (
         <div className="flex flex-col w-full animate-in fade-in duration-500">
             {/* Top Banner Section */}
-            <div className="px-[60px] pt-[60px] pb-10 w-full">
-                <div className="w-full bg-[#FFF9F5] flex items-center justify-between px-16 py-12">
+            <div className="px-4 md:px-[60px] pt-8 md:pt-[60px] pb-6 md:pb-10 w-full">
+                <div className="w-full bg-[#FFF9F5] flex flex-col lg:flex-row items-start lg:items-center justify-between px-6 py-8 sm:px-16 sm:py-12 gap-6 lg:gap-0">
                     <div className="flex flex-col gap-4">
                         <div className="inline-flex items-center gap-3">
                             <img
@@ -66,7 +66,7 @@ export const Categories = (): JSX.Element => {
                             />
                         </div>
 
-                        <h2 className="font-display font-normal text-[50px] leading-tight">
+                        <h2 className="font-display font-normal text-[36px] sm:text-[46px] md:text-[50px] leading-tight">
                             <span className="text-black">Types of </span>
                             <span className="text-[#FF8936] italic">Gemstones</span>
                         </h2>
@@ -81,7 +81,7 @@ export const Categories = (): JSX.Element => {
             </div>
 
             {/* Grid Section */}
-            <div className="grid grid-cols-2 gap-10 px-[60px] pb-[60px] w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 px-4 md:px-[60px] pb-8 md:pb-[60px] w-full">
                 {categories.map((category) => (
                     <div
                         key={category.id}
@@ -95,7 +95,7 @@ export const Categories = (): JSX.Element => {
                             />
                         </div>
 
-                        <div className="flex flex-col p-10 flex-1 justify-between">
+                        <div className="flex flex-col p-6 md:p-10 flex-1 justify-between">
                             <div>
                                 <div className="inline-flex items-center gap-3 mb-4">
                                     <img

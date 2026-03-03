@@ -34,9 +34,9 @@ export const Certification = (): JSX.Element => {
     return (
         <div className="flex flex-col w-full animate-in fade-in duration-500">
             {/* Top Section */}
-            <main className="flex w-full p-[60px]">
-                <article className="flex w-full items-center justify-between gap-[60px]">
-                    <div className="flex flex-col flex-1 max-w-[550px] items-start gap-8">
+            <main className="flex w-full p-4 md:p-[60px]">
+                <article className="flex flex-col lg:flex-row w-full items-center justify-between gap-8 md:gap-[60px]">
+                    <div className="flex flex-col flex-1 max-w-full lg:max-w-[550px] items-start gap-6 md:gap-8">
                         <header className="flex flex-col items-start gap-4">
                             <div className="inline-flex items-center gap-3">
                                 <img
@@ -56,7 +56,7 @@ export const Certification = (): JSX.Element => {
                                 />
                             </div>
 
-                            <h1 className="font-display font-normal text-[56px] leading-tight">
+                            <h1 className="font-display font-normal text-[36px] md:text-[48px] leading-tight">
                                 <span className="text-black">Gemstone </span>
                                 <span className="text-[#FF8936] italic">Certification</span>
                             </h1>
@@ -77,7 +77,7 @@ export const Certification = (): JSX.Element => {
                     </div>
 
                     <img
-                        className="w-[450px] h-[450px] object-cover shrink-0"
+                        className="w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] object-cover shrink-0"
                         alt="Gemstone Certification Ring"
                         src={CertificationRightImage}
                     />
@@ -105,14 +105,14 @@ export const Certification = (): JSX.Element => {
                         </span>
                         <img className="w-2.5 h-2.5" alt="star" src={star1} aria-hidden="true" />
                     </div>
-                    <h2 className="font-display font-normal text-[50px] leading-tight relative z-10">
+                    <h2 className="font-display font-normal text-[36px] md:text-[50px] leading-tight relative z-10 text-center">
                         <span className="text-black">Our </span>
                         <span className="text-[#FF8936] italic">Certification Partners</span>
                     </h2>
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-4 gap-6 px-[60px] w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-[60px] w-full">
                     {partners.map((partner, index) => (
                         <div key={index} className="flex flex-col border border-[#CED4DA] bg-white group hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300">
                             <div className="h-[180px] flex items-center justify-center p-8 bg-white overflow-hidden relative">
