@@ -53,7 +53,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
             {/* BY NAME SECTION */}
             <div className="flex flex-col flex-1 p-4 md:p-[40px] border-b md:border-b-0 md:border-r border-[#CED4DA]">
                 <header className="flex items-center gap-4 w-full mb-8">
-                    <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
+                    <h2 className="font-open-sans font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY NAME
                     </h2>
                     <div className="flex-1 h-px bg-[#FF8936]"></div>
@@ -73,7 +73,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
                                     }`}
                                 aria-pressed={isSelected}
                             >
-                                <span className="font-['Open_Sans'] font-medium text-[16px] leading-[24px] tracking-[0px]">
+                                <span className="font-open-sans font-medium text-[16px] leading-[24px] tracking-[0px]">
                                     {letter}
                                 </span>
                             </button>
@@ -85,7 +85,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
             {/* BY TYPE SECTION */}
             <div className="flex flex-col w-full md:w-[320px] p-4 md:p-[40px] border-b md:border-b-0 md:border-r border-[#CED4DA] shrink-0">
                 <header className="flex items-center gap-4 w-full mb-8">
-                    <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
+                    <h2 className="font-open-sans font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY TYPE
                     </h2>
                     <div className="flex-1 h-px bg-[#FF8936]"></div>
@@ -105,7 +105,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
                                     }`}
                                 aria-pressed={isSelected}
                             >
-                                <span className="font-['Open_Sans'] font-medium text-[16px] leading-[24px] tracking-[0px] text-left">
+                                <span className="font-open-sans font-medium text-[16px] leading-[24px] tracking-[0px] text-left">
                                     {type}
                                 </span>
                             </button>
@@ -117,7 +117,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
             {/* BY COLOR SECTION */}
             <div className="flex flex-col flex-1 p-4 md:p-[40px] md:pl-14">
                 <header className="flex items-center gap-4 w-full mb-8">
-                    <h2 className="font-['Open_Sans'] font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
+                    <h2 className="font-open-sans font-medium text-[#FF8936] text-[16px] leading-[24px] tracking-[0px] uppercase whitespace-nowrap">
                         BY COLOR
                     </h2>
                     <div className="flex-1 h-px bg-[#FF8936]"></div>
@@ -142,7 +142,7 @@ export const ActiveFiltersSection = (): JSX.Element => {
                                 >
                                     <div className={`w-full h-full rounded-full ${color.bg} ${color.border || ''}`}></div>
                                 </div>
-                                <span className="font-['Open_Sans'] font-medium text-[#6C757D] text-[16px] leading-[24px] tracking-[0px]">
+                                <span className="font-open-sans font-medium text-[#6C757D] text-[16px] leading-[24px] tracking-[0px]">
                                     {color.name}
                                 </span>
                             </button>

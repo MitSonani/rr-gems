@@ -63,11 +63,11 @@ export const Certification = (): JSX.Element => {
                         </header>
 
                         <div className="flex flex-col gap-6">
-                            <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-medium leading-[24px]">
+                            <p className="font-open-sans text-[#6C757D] text-[16px] font-medium leading-[24px]">
                                 Every stone we sell is independently verified and certified by globally
                                 recognized gemological institutions.
                             </p>
-                            <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-medium leading-[24px]">
+                            <p className="font-open-sans text-[#6C757D] text-[16px] font-medium leading-[24px]">
                                 At RR Gems and Jewels, we believe that true beauty is rooted in
                                 transparency. Every gemstone in our collection is accompanied by a
                                 comprehensive certificate from world-renowned gemological laboratories
@@ -126,7 +126,7 @@ export const Certification = (): JSX.Element => {
                                 <h3 className="font-display font-normal text-[32px] text-[#FF8936] mb-2 leading-none">
                                     {partner.abbreviation}
                                 </h3>
-                                <p className="font-['Open_Sans'] text-[#6C757D] text-[15px] font-medium leading-[22px] whitespace-pre-line">
+                                <p className="font-open-sans text-[#6C757D] text-[15px] font-medium leading-[22px] whitespace-pre-line">
                                     {partner.fullName}
                                 </p>
                             </div>

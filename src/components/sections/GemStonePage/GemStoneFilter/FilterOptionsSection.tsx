@@ -17,7 +17,7 @@ export const FilterOptionsSection = (): JSX.Element => {
                 className="inline-flex items-center justify-center border-b border-black bg-transparent cursor-pointer transition-opacity hover:opacity-70 outline-none pb-0.5"
                 aria-label="Clear all filters"
             >
-                <span className="font-['Open_Sans'] font-medium text-black text-[12px] md:text-[16px] leading-[18px] md:leading-[24px] tracking-[0px] uppercase">
+                <span className="font-open-sans font-medium text-black text-[12px] md:text-[16px] leading-[18px] md:leading-[24px] tracking-[0px] uppercase">
                     CLEAR ALL
                 </span>
             </button>

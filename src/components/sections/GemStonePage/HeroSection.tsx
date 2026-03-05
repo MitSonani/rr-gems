@@ -72,7 +72,7 @@ export default function GemStoneHeroSection() {
                     <div className="flex flex-col justify-center items-center max-w-[650px] px-2 md:px-4 w-full z-10 relative pb-6 md:pb-10 order-1 md:order-none">
                         <motion.div variants={fadeUpVariants} className="flex flex-col justify-center items-center gap-3 md:gap-[16px]">
                             <img src={MiddleIcon} alt="" className="h-[40px] md:h-[80px] w-auto" />
-                            <p className="font-['Open_Sans'] font-normal text-[14px] md:text-[20px] leading-normal tracking-[0px] text-center mt-2 text-[#322f2d] max-w-[280px] md:max-w-none">
+                            <p className="font-open-sans font-normal text-[14px] md:text-[20px] leading-normal tracking-[0px] text-center mt-2 text-[#322f2d] max-w-[280px] md:max-w-none">
                                 Premium-quality natural gemstones, which are lab certified
                                 <br className="hidden md:block" />
                                 and trusted by over 3 lakh customers.

@@ -21,7 +21,7 @@ export default function ExpertGuidance() {
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-4">
                         <img src={starIcon} alt="Star" className="w-2.5 h-2.5" />
-                        <span className="font-['Open_Sans'] font-medium text-[14px] leading-[100%] tracking-[0.2em] text-[#FF8936] uppercase">
+                        <span className="font-open-sans font-medium text-[14px] leading-[100%] tracking-[0.2em] text-[#FF8936] uppercase">
                             EXPERT GUIDANCE
                         </span>
                         <img src={lineIcon} alt="Line" className="w-[100px]" />
@@ -47,7 +47,7 @@ export default function ExpertGuidance() {
                                 <div className="flex items-center justify-center w-5 h-5 rounded-full bg-[#FF8936] shrink-0">
                                     <img src={orangeCheckMark} alt="Orange Check Mark" className="w-5 h-5" />
                                 </div>
-                                <span className="font-['Open_Sans'] font-medium text-[14px] md:text-[18px] leading-tight md:leading-[28px] tracking-[0px] text-black">
+                                <span className="font-open-sans font-medium text-[14px] md:text-[18px] leading-tight md:leading-[28px] tracking-[0px] text-black">
                                     {text}
                                 </span>
                             </div>
@@ -56,12 +56,12 @@ export default function ExpertGuidance() {
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 w-full">
-                        <button className="flex items-center justify-center gap-3 border border-[#FF8936] bg-transparent text-[#FF8936] px-6 py-3 md:px-8 md:py-4 font-['Open_Sans'] font-medium text-[14px] md:text-[15px] hover:bg-[#FF8936]/10 transition-colors cursor-pointer outline-none">
+                        <button className="flex items-center justify-center gap-3 border border-[#FF8936] bg-transparent text-[#FF8936] px-6 py-3 md:px-8 md:py-4 font-open-sans font-medium text-[14px] md:text-[15px] hover:bg-[#FF8936]/10 transition-colors cursor-pointer outline-none">
                             Astrologer Consultation
                             <img src={orangeRightArrow} alt="Arrow Right" className="w-5 h-5" />
                         </button>
 
-                        <button className="flex items-center justify-center gap-3 bg-white text-black px-6 py-3 md:px-8 md:py-4 font-['Open_Sans'] font-medium text-[14px] md:text-[15px] shadow-sm hover:shadow-md transition-shadow cursor-pointer outline-none">
+                        <button className="flex items-center justify-center gap-3 bg-white text-black px-6 py-3 md:px-8 md:py-4 font-open-sans font-medium text-[14px] md:text-[15px] shadow-sm hover:shadow-md transition-shadow cursor-pointer outline-none">
                             AI Consultation (Free)
                             <img src={blackRightArrow} alt="Arrow Right" className="w-5 h-5" />
                         </button>

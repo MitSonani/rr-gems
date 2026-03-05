@@ -33,13 +33,13 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                 <div className="p-6 lg:p-[40px] border-b lg:border-b-0 lg:border-r border-[#CED4DA]">
                     <div className="flex items-center gap-2 mb-4">
                         <img src={StarIcon} alt="star" className="w-[12px] h-[12px]" />
-                        <span className="font-['Open_Sans'] font-medium text-[#FF8936] text-[14px] tracking-[20%] uppercase">01 / HISTORY</span>
+                        <span className="font-open-sans font-medium text-[#FF8936] text-[14px] tracking-[20%] uppercase">01 / HISTORY</span>
                         <div className="h-px bg-[#FF8936] w-12 ml-2 opacity-50"></div>
                     </div>
                     <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[36px] lg:text-[48px] leading-[1.2] mb-4 lg:mb-6 text-[#000000]">
                         Gemstone’s <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">History</span>
                     </h3>
-                    <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] font-medium text-[#6C757D] leading-[24px] lg:leading-[28px]">
+                    <p className="font-open-sans text-[15px] lg:text-[18px] font-medium text-[#6C757D] leading-[24px] lg:leading-[28px]">
                         Gemstones have been treasured by civilizations for centuries for their beauty and rarity. Formed deep within the earth over millions of years, each gemstone carries a rich natural history shaped by time and geological processes.
                     </p>
                 </div>
@@ -48,13 +48,13 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                 <div className="p-6 lg:p-[40px]">
                     <div className="flex items-center gap-2 mb-4">
                         <img src={StarIcon} alt="star" className="w-[12px] h-[12px]" />
-                        <span className="font-['Open_Sans'] text-[#FF8936] text-[14px] tracking-[20%] uppercase font-medium">02 / INVESTMENT</span>
+                        <span className="font-open-sans text-[#FF8936] text-[14px] tracking-[20%] uppercase font-medium">02 / INVESTMENT</span>
                         <div className="h-px bg-[#FF8936] w-12 ml-2 opacity-50"></div>
                     </div>
                     <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[32px] lg:text-[42px] leading-[1.2] mb-4 text-[#000000]">
                         Value & <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">Investment</span>
                     </h3>
-                    <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] font-medium text-[#6C757D] leading-[24px] lg:leading-[28px]">
+                    <p className="font-open-sans text-[15px] lg:text-[18px] font-medium text-[#6C757D] leading-[24px] lg:leading-[28px]">
                         A gemstone is an investment in both style and legacy. Carefully selected and certified gemstones ensure that you are receiving a piece of the earth that is as authentic as it is beautiful. By prioritizing lab-certified stones, you secure lasting value.
                     </p>
                 </div>
@@ -67,7 +67,7 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                     <div className="z-10 w-full lg:w-1/3">
                         <div className="flex items-center gap-2 mb-2">
                             <img src={StarIcon} alt="star" className="w-[10px] h-[10px]" />
-                            <span className="font-['Open_Sans'] text-[#FF8936] text-[12px] lg:text-[14px] tracking-[20%] uppercase font-medium">THE STORY</span>
+                            <span className="font-open-sans text-[#FF8936] text-[12px] lg:text-[14px] tracking-[20%] uppercase font-medium">THE STORY</span>
                             <div className="h-px bg-[#FF8936] w-12 ml-2 opacity-50"></div>
                         </div>
                         <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[36px] lg:text-[48px] leading-[100%] text-[#000000]">
@@ -80,7 +80,7 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                     </div>
 
                     <div className="z-10 w-full lg:w-1/3 text-left lg:text-right">
-                        <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] text-[#6C757D] font-medium leading-[24px] lg:leading-[28px]">
+                        <p className="font-open-sans text-[15px] lg:text-[18px] text-[#6C757D] font-medium leading-[24px] lg:leading-[28px]">
                             Three decades of trust, <br className="hidden lg:block" />expertise & certified excellence.
                         </p>
                     </div>
@@ -95,7 +95,7 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                         <div className="flex justify-center mb-4">
                             <DividerOrnament />
                         </div>
-                        <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Bringing you decades of expertise in gemstones and jewels since 1990.</p>
+                        <p className="font-open-sans text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Bringing you decades of expertise in gemstones and jewels since 1990.</p>
                     </div>
                     {/* Stat 2 */}
                     <div className="p-8 lg:p-[40px] px-6 lg:px-8 border-b lg:border-b-0 lg:border-r border-[#CED4DA] flex flex-col items-center text-center">
@@ -104,7 +104,7 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                         <div className="flex justify-center mb-4">
                             <DividerOrnament />
                         </div>
-                        <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Our commitment to authenticity and customer satisfaction.</p>
+                        <p className="font-open-sans text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Our commitment to authenticity and customer satisfaction.</p>
                     </div>
                     {/* Stat 3 */}
                     <div className="p-8 lg:p-[40px] px-6 lg:px-8 flex flex-col items-center text-center">
@@ -113,7 +113,7 @@ export default function ReadMoreGem({ onClose }: ReadMoreGemProps) {
                         <div className="flex justify-center mb-4">
                             <DividerOrnament />
                         </div>
-                        <p className="font-['Open_Sans'] text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Every stone is tested for your complete peace of mind.</p>
+                        <p className="font-open-sans text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-medium text-[#6C757D] max-w-full lg:max-w-[320px]">Every stone is tested for your complete peace of mind.</p>
                     </div>
                 </div>
             </div>

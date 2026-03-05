@@ -44,7 +44,7 @@ const faqs = [
 ];
 
 export default function Faqs() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -76,7 +76,7 @@ export default function Faqs() {
                     className='inline-flex items-center justify-center gap-[8px] bg-[#FCF2EB] py-[8px] px-[24px]'
                 >
                     <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />
-                    <p className="font-['Open_Sans'] font-medium text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase">
+                    <p className="font-open-sans font-medium text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase">
                         WE HAVE ANSWERS
                     </p>
                     <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />
@@ -102,7 +102,7 @@ export default function Faqs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="font-['Open_Sans'] font-medium text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[0px] text-center text-[#6C757D] max-w-[466px] px-2"
+                    className="font-open-sans font-medium text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] tracking-[0px] text-center text-[#6C757D] max-w-[466px] px-2"
                 >
                     Everything you need to know about gemstones, <br className="hidden md:block" /> certification, quality, and buying with confidence.
                 </motion.p>
@@ -157,7 +157,7 @@ export default function Faqs() {
                                             <div className="max-w-[1063px]">
                                                 <div className="mt-4 md:mt-[24px] pl-6 md:pl-[56px]">
                                                     <div className="border-l-2 border-[#FF8936] pl-4 md:pl-[24px]">
-                                                        <p className="font-['Open_Sans'] font-medium text-[18px] leading-[28px] text-[#6C757D]">
+                                                        <p className="font-open-sans font-medium text-[18px] leading-[28px] text-[#6C757D]">
                                                             {faq.answer}
                                                         </p>
                                                     </div>

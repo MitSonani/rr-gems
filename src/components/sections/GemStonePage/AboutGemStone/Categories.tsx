@@ -73,7 +73,7 @@ export const Categories = (): JSX.Element => {
                     </div>
 
                     <div className="max-w-[400px]">
-                        <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-medium leading-[26px]">
+                        <p className="font-open-sans text-[#6C757D] text-[16px] font-medium leading-[26px]">
                             Gemstones are broadly classified based on their origin, composition, and formation.
                         </p>
                     </div>
@@ -119,7 +119,7 @@ export const Categories = (): JSX.Element => {
                                     {category.title}
                                 </h3>
 
-                                <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-medium leading-[26px]">
+                                <p className="font-open-sans text-[#6C757D] text-[16px] font-medium leading-[26px]">
                                     {category.description}
                                 </p>
                             </div>

@@ -2,6 +2,7 @@
 
 @theme {
   --font-inter: "Inter", "system-ui", "sans-serif";
+  --font-open-sans: "Open Sans", "sans-serif";
 }
 
 :root {
@@ -193,4 +194,8 @@ li {
   to {
     transform: translateY(calc(-100% - var(--gap)));
   }
+}
+
+.font-open-sans {
+  font-family: "Open Sans", sans-serif !important;
 }

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage, } from "./pages";
 import Layout from "./layouts/layout";
-import GemstonePage from "./pages/GemStonePage";
+import GemStonePage from "./pages/GemStonePage";
+import GemstoneDetailPage from "./pages/GemstoneDetailPage";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         {/* Routes with Layout (header and footer) */}
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="gemstone" element={<GemstonePage />} />
+          <Route path="gemstone" element={<GemStonePage />} />
+          <Route path="gemstone-detail" element={<GemstoneDetailPage />} />
         </Route>
       </Routes>
     </Router>

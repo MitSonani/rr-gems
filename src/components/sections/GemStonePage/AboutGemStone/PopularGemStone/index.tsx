@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StarIcon from "/assets/PopularGem/atom-icon.svg";
 import RedRing from "/assets/PopularGem/redring.png";
 import RedRingVector from "/assets/PopularGem/redringbackvector.svg";
@@ -145,14 +146,14 @@ export default function PopularGemstone() {
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2 mb-2">
                         <img src={StarIcon} alt="star" className="w-[12px] h-[12px]" />
-                        <span className="font-['Open_Sans'] text-[#FF8936] text-[12px] md:text-[14px] tracking-widest font-medium uppercase">THE COLLECTION</span>
+                        <span className="font-open-sans text-[#FF8936] text-[12px] md:text-[14px] tracking-widest font-medium uppercase">THE COLLECTION</span>
                         <div className="h-px bg-[#FF8936] w-[100px] ml-2 opacity-50"></div>
                     </div>
                     <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[36px] md:text-[48px] text-black leading-none mt-2">
                         Popular <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">Gemstones</span>
                     </h2>
                 </div>
-                <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] leading-[26px] font-medium max-w-[400px]">
+                <p className="font-open-sans text-[#6C757D] text-[16px] leading-[26px] font-medium max-w-[400px]">
                     Explore our most sought-after natural gemstones, carefully selected for their quality, authenticity, and timeless appeal.
                 </p>
             </div>
@@ -194,18 +195,19 @@ const GemRow = ({ leftGem, rightGem }: { leftGem: GemItem, rightGem: GemItem }) 
 const ColorGroup = ({ gem }: { gem: GemItem }) => (
     <div className="flex items-center gap-2">
         <div className="w-[14px] h-[14px] rounded-full" style={{ backgroundColor: gem.colorHex }}></div>
-        <span className="font-['Open_Sans'] text-[15px] text-[#6C757D] font-medium">{gem.colorName}</span>
+        <span className="font-open-sans text-[15px] text-[#6C757D] font-medium">{gem.colorName}</span>
     </div>
 );
 
 const PlanetGroup = ({ gem }: { gem: GemItem }) => (
     <div className="flex items-center gap-2">
         <img src={gem.planetIcon} alt="planet" className="w-[16px] h-[16px]" style={{ filter: 'brightness(0) saturate(100%) invert(64%) sepia(35%) saturate(3065%) hue-rotate(338deg) brightness(101%) contrast(101%)' }} />
-        <span className="font-['Open_Sans'] text-[15px] text-[#FF8936] font-medium">{gem.planetName}</span>
+        <span className="font-open-sans text-[15px] text-[#FF8936] font-medium">{gem.planetName}</span>
     </div>
 );
 
 const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
+    const navigate = useNavigate();
     return (
         <div
             className={`flex flex-col lg:flex-row items-center flex-nowrap transition-all duration-800 ease-in-out cursor-pointer h-full relative
@@ -213,6 +215,7 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
                 ${isRightSide ? 'lg:justify-end' : 'lg:justify-start'}
             `}
             onMouseEnter={onHover}
+            onClick={() => navigate('/gemstone-detail')}
         >
             {/* Image Box */}
             <div className={`relative shrink-0 w-[280px] sm:w-[305px] h-[280px] sm:h-[305px] flex items-center justify-center z-10 order-1 ${isRightSide ? 'lg:order-2' : 'lg:order-1'} group`}>
@@ -280,7 +283,7 @@ const GemCard = ({ gem, isExpanded, onHover, isRightSide }: any) => {
                     <div className={`w-[200px] lg:w-[350px] h-px bg-[#CED4DA] mb-4 lg:mb-6 mt-1 shrink-0 opacity-60 mx-auto ${isRightSide ? 'lg:mr-0 lg:ml-auto' : 'lg:ml-0 lg:mr-auto'}`}></div>
 
                     {/* Description */}
-                    <p className={`font-['Open_Sans'] text-[14px] lg:text-[15px] font-medium leading-[24px] lg:leading-[26px] text-[#6C757D] mb-6 lg:mb-8 whitespace-normal max-w-full lg:max-w-[350px] mx-auto text-center ${isRightSide ? 'lg:text-right lg:mr-0 lg:ml-auto' : 'lg:text-left lg:ml-0 lg:mr-auto'}`}>
+                    <p className={`font-open-sans text-[14px] lg:text-[15px] font-medium leading-[24px] lg:leading-[26px] text-[#6C757D] mb-6 lg:mb-8 whitespace-normal max-w-full lg:max-w-[350px] mx-auto text-center ${isRightSide ? 'lg:text-right lg:mr-0 lg:ml-auto' : 'lg:text-left lg:ml-0 lg:mr-auto'}`}>
                         {gem.description}
                     </p>
 

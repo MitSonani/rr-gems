@@ -8,7 +8,7 @@ export default function GemStoneCollections() {
             <div className='w-full max-w-[1280px] mx-auto flex flex-col items-center gap-[40px]'>
                 <div className='inline-flex items-center justify-center gap-[8px] bg-[#FCF2EB] py-[8px] px-[24px]'>
                     <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />
-                    <p className="font-['Open_Sans'] font-medium text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase">
+                    <p className="font-open-sans font-medium text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase">
                         PURE, NATURAL, LAB CERTIFIED
                     </p>
                     <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />

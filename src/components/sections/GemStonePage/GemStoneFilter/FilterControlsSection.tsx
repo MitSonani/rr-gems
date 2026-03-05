@@ -25,7 +25,7 @@ export const FilterControlsSection = (): JSX.Element => {
                         role="group"
                         aria-label={`Filter: ${filter.label}`}
                     >
-                        <span className="font-['Open_Sans'] font-medium text-[#FF8936] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] tracking-[0px] whitespace-nowrap">
+                        <span className="font-open-sans font-medium text-[#FF8936] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] tracking-[0px] whitespace-nowrap">
                             {filter.label}
                         </span>
 

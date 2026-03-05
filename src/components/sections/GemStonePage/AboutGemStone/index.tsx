@@ -40,7 +40,7 @@ export const AboutGemStone = (): JSX.Element => {
                             aria-current={activeTab === tab.label ? "page" : undefined}
                         >
                             <span
-                                className={`font-['Open_Sans'] text-[14px] md:text-[16px] font-medium leading-[24px] tracking-[0px] ${activeTab === tab.label
+                                className={`font-open-sans text-[14px] md:text-[16px] font-medium leading-[24px] tracking-[0px] ${activeTab === tab.label
                                     ? "text-[#FF8936]"
                                     : "text-[#6C757D]"
                                     }`}
@@ -81,7 +81,7 @@ export const AboutGemStone = (): JSX.Element => {
                                         </h1>
                                     </header>
 
-                                    <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-medium leading-[24px] tracking-[0px]">
+                                    <p className="font-open-sans text-[#6C757D] text-[16px] font-medium leading-[24px] tracking-[0px]">
                                         Gemstones are more than just exquisite ornaments; they are
                                         naturally formed minerals prized for their breathtaking beauty,
                                         extreme rarity, and lifelong durability.

@@ -24,7 +24,7 @@ const AlertBox = ({ text, link }: { text: string; link?: string }) => (
     <div className="w-full px-5 py-4 border border-[#FFDAB9] bg-[#FFF9F5] flex flex-col gap-3">
         <div className="flex items-start gap-3">
             <div className="mt-0.5"><TickIcon /></div>
-            <p className="font-['Open_Sans'] text-[#FF8936] text-[15px] leading-snug tracking-tight">
+            <p className="font-open-sans text-[#FF8936] text-[15px] leading-snug tracking-tight">
                 {text}
             </p>
         </div>
@@ -128,7 +128,7 @@ export default function BuyingGuide(): JSX.Element {
                     </h2>
                 </div>
                 <div className="max-w-[450px]">
-                    <p className="font-['Open_Sans'] text-[#6C757D] text-[18px] leading-[28px]">
+                    <p className="font-open-sans text-[#6C757D] text-[18px] leading-[28px]">
                         From understanding your needs to selecting a certified, high-quality stone — we walk you through every step with confidence.
                     </p>
                 </div>
@@ -157,7 +157,7 @@ export default function BuyingGuide(): JSX.Element {
                                     {step.title}
                                 </h3>
                             </div>
-                            <p className="font-['Open_Sans'] text-[#6C757D] text-[16px] font-normal leading-[26px]">
+                            <p className="font-open-sans text-[#6C757D] text-[16px] font-normal leading-[26px]">
                                 {step.description}
                             </p>
                             <div className="mt-auto pt-2">
