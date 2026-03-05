@@ -3,7 +3,7 @@ import RightArrow from "/assets/Breadcrumb/rightarrow.svg";
 
 export default function Breadcrumb() {
     return (
-        <div className="flex items-center gap-2 px-4 md:px-[60px] py-4 bg-white font-open-sans text-[16px] font-medium  leading-6 mt-6">
+        <div className="flex items-center gap-2 px-4  py-4 bg-white font-open-sans text-[16px] font-medium  leading-6 mt-6">
             <Link to="/" className="text-[#6C757D] hover:text-[#FF8936] transition-colors">Home</Link>
             <img src={RightArrow} alt="RightArrow" />
             <Link to="/gemstone" className="text-[#6C757D] hover:text-[#FF8936] transition-colors">Gemstones</Link>

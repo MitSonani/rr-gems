@@ -5,7 +5,7 @@ import GemBackVector from "/assets/GemDetail/hero-gem-vector.svg";
 import GemStoneImage from "/assets/GemCollection/gem-image.png";
 export default function HeroSection() {
     return (
-        <div className="px-4 md:px-[60px] pb-10 bg-white">
+        <div className="px-4  pb-10 bg-white">
             <div className="flex flex-col lg:flex-row items-center border border-[#CED4DA] rounded-sm bg-white overflow-hidden p-6 md:p-12 gap-10">
 
                 {/* Left Content */}
