@@ -21,14 +21,14 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="flex flex-col flex-1 pl-4 md:pl-8 border-l-4 border-[#FF8936]"
                 >
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-2 w-full">
                         <img src={Star} alt="Star" />
-                        <span className="font-open-sans text-[#FF8936] text-[14px] tracking-[20%] font-medium uppercase">PRECIOUS</span>
+                        <span className="font-open-sans text-[#FF8936] text-[12px] md:text-[14px] tracking-[20%] font-medium uppercase shrink-0">PRECIOUS</span>
                         <img src={Line} alt="Line" />
                     </div>
 
                     <div className="flex items-center gap-4 mb-6 flex-wrap pb-[16px] border-b border-[#FF8936] max-w-[400px]">
-                        <h1 className="font-[Very_Vogue] font-[401] text-[40px] md:text-[40px] text-[#FF8936] leading-[100%] tracking-[2%]">
+                        <h1 className="font-[Very_Vogue] font-[401] text-[32px] md:text-[40px] text-[#FF8936] leading-[100%] tracking-[2%]">
                             Emerald
                         </h1>
                         <div className="flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    <p className="font-open-sans text-[#6C757D] text-[16px] md:text-[16px] leading-[24px] max-w-[720px] mb-4!">
+                    <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] leading-[26px] md:leading-[24px] max-w-[720px] mb-4!">
                         Emerald Gemstone, commonly known as Panna stone in Hindi, is a green colored precious
                         astrological gemstone associated with Planet Mercury (Budh). Emerald (Panna) Gemstone has
                         immeasurable benefits including financial, educational and medical success along with
@@ -47,17 +47,17 @@ export default function HeroSection() {
                         Columbian and Zambian Emeralds
                     </p>
 
-                    <div className="flex flex-wrap gap-4 max-w-[720px]">
-                        <div className=" border-2 bg-[#FCF2EB] border-[#FF8936] px-4 py-2 font-open-sans text-[16px] leading-[24px] font-medium text-[#FF8936]">
+                    <div className="flex flex-wrap gap-2 md:gap-4 max-w-[720px]">
+                        <div className="border-2 bg-[#FCF2EB] border-[#FF8936] px-3 py-1.5 md:px-4 md:py-2 font-open-sans text-[13px] md:text-[16px] leading-[20px] md:leading-[24px] font-medium text-[#FF8936]">
                             Growth in business
                         </div>
-                        <div className=" border-2 bg-[#FCF2EB] border-[#FF8936] px-4 py-2 font-open-sans text-[16px] leading-[24px] font-medium text-[#FF8936]">
+                        <div className="border-2 bg-[#FCF2EB] border-[#FF8936] px-3 py-1.5 md:px-4 md:py-2 font-open-sans text-[13px] md:text-[16px] leading-[20px] md:leading-[24px] font-medium text-[#FF8936]">
                             Eloquence & Charisma
                         </div>
-                        <div className=" border-2 bg-[#FCF2EB] border-[#FF8936] px-4 py-2 font-open-sans text-[16px] leading-[24px] font-medium text-[#FF8936]">
+                        <div className="border-2 bg-[#FCF2EB] border-[#FF8936] px-3 py-1.5 md:px-4 md:py-2 font-open-sans text-[13px] md:text-[16px] leading-[20px] md:leading-[24px] font-medium text-[#FF8936]">
                             Sharper Intellect & Memory
                         </div>
-                        <div className=" border-2 bg-[#FCF2EB] border-[#FF8936] px-4 py-2 font-open-sans text-[16px] leading-[24px] font-medium text-[#FF8936]">
+                        <div className="border-2 bg-[#FCF2EB] border-[#FF8936] px-3 py-1.5 md:px-4 md:py-2 font-open-sans text-[13px] md:text-[16px] leading-[20px] md:leading-[24px] font-medium text-[#FF8936]">
                             Growth In Speculation
                         </div>
                     </div>
@@ -68,7 +68,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                    className="relative w-full lg:w-[450px] h-[350px] lg:h-[450px] flex items-center justify-center shrink-0"
+                    className="relative w-full lg:w-[450px] h-[300px] md:h-[350px] lg:h-[450px] flex items-center justify-center shrink-0"
                 >
                     <motion.img
                         animate={{ rotate: 360 }}
@@ -77,13 +77,13 @@ export default function HeroSection() {
                         alt="zodiac background"
                         className="absolute w-full h-full object-contain opacity-80 pointer-events-none"
                     />
-                    <div className="absolute w-[256px] h-[256px] lg:w-[256px] lgs:h-[256px] rounded-full bg-[#FFDCE0] opacity-80" />
+                    <div className="absolute w-[200px] h-[200px] md:w-[256px] md:h-[256px] rounded-full bg-[#FFDCE0] opacity-80" />
                     <motion.img
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         src={GemStoneImage}
                         alt="Emerald Gemstone"
-                        className="relative z-10 w-[200px] lg:w-[240px] h-auto object-contain filter drop-shadow-xl"
+                        className="relative z-10 w-[160px] md:w-[200px] lg:w-[240px] h-auto object-contain filter drop-shadow-xl"
                     />
                 </motion.div>
             </motion.div>

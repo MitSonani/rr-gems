@@ -74,13 +74,13 @@ export default function FaqsGemDetails() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.6 }}
-                        className='inline-flex items-center gap-[8px]'
+                        className='flex items-center gap-[8px] w-full'
                     >
-                        <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px]' />
-                        <p className="font-open-sans font-medium text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase">
+                        <img src={StarIcon} alt="Star Icon" className='h-[12px] w-[12px] shrink-0' />
+                        <p className="font-open-sans font-medium text-[12px] md:text-[14px] leading-[20px] tracking-[0.1em] text-[#FF8936] uppercase shrink-0">
                             COMMON QUESTIONS
                         </p>
-                        <img src={LineIcon} alt="Line Icon" className='w-[100px] h-px ml-2' />
+                        <img src={LineIcon} alt="Line Icon" className='w-[100px] h-px ml-2 shrink-0' />
                     </motion.div>
 
                     <motion.div

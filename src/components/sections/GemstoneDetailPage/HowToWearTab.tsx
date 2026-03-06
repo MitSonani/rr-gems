@@ -36,18 +36,18 @@ export default function HowToWearTab() {
     ];
 
     return (
-        <div className="animate-fade-in p-6 md:p-12 md:pl-16">
-            <div className="flex items-center gap-2 mb-4">
+        <div className="animate-fade-in p-4 sm:p-6 md:p-12 md:pl-16">
+            <div className="flex items-center gap-2 mb-4 w-full">
                 <img src={Star} alt="star" />
-                <span className="font-open-sans text-[#FF8936] text-[14px] tracking-[20%] font-medium uppercase">WEARING GUIDE</span>
+                <span className="font-open-sans text-[#FF8936] text-[12px] md:text-[14px] tracking-[20%] font-medium uppercase shrink-0">WEARING GUIDE</span>
                 <img src={line} alt="line" />
             </div>
 
-            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[48px] text-black leading-none mb-10">
-                How to Wear <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[40px] md:text-[48px] italic text-[#FF8936]">Emerald</span>
+            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[32px] md:text-[48px] text-black leading-none mb-6 md:mb-10">
+                How to Wear <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[32px] md:text-[48px] italic text-[#FF8936]">Emerald</span>
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-10!">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[26px] md:leading-[28px] max-w-[1160px] mb-6 md:mb-10!">
                 Wearing a Panna Stone correctly is essential to receive its full astrological benefits. This gemstone is linked to Mercury (बुध), so it must be worn with proper rituals and timing.
             </p>
 
