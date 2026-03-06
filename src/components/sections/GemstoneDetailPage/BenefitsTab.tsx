@@ -41,11 +41,11 @@ export default function BenefitsTab() {
                 <img src={line} alt="line" />
             </div>
 
-            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[48px] text-black leading-none mb-6">
+            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[48px] text-black leading-none mb-10">
                 Benefits of <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[40px] md:text-[48px] italic text-[#FF8936]">Emerald</span>
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] max-w-[1160px] mb-12">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-10!">
                 Emerald is deeply valued for its powerful effects on the mind, heart, and spirit. Associated with Mercury, this stone is believed to enhance communication, sharpen intellect, and bring emotional peace.
             </p>
 
@@ -60,10 +60,10 @@ export default function BenefitsTab() {
                             />
                         </div>
                         <div className="p-6 md:p-8 flex flex-col flex-1">
-                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[#FF8936] text-[24px] md:text-[28px] leading-[100%] mb-4">
+                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[#FF8936] text-[24px] md:text-[32px] leading-[100%] mb-2">
                                 {card.title}
                             </h3>
-                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px]">
+                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px]">
                                 {card.description}
                             </p>
                         </div>

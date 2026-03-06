@@ -55,7 +55,7 @@ export default function WhoShouldWearTab() {
                 Who Should Wear <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[40px] md:text-[48px] italic text-[#FF8936]">Emerald</span>
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] max-w-[1160px] mb-8">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-10!">
                 Emerald stone in Hindi is known as panna stone, the gemstone of intellect, is ideal for those seeking clarity, creativity, and success.
                 Especially powerful for zodiacs like Gemini, Virgo, and Mercury-ruled individuals, it enhances communication, sharpens focus, and attracts prosperity.
             </p>
@@ -67,10 +67,10 @@ export default function WhoShouldWearTab() {
                             {greenCheck}
                         </div>
                         <div>
-                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[20px] md:text-[24px] text-black mb-2">
+                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[20px] md:text-[28px] text-black mb-2">
                                 {item.title}
                             </h3>
-                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px]">
+                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px]">
                                 {item.description}
                             </p>
                         </div>
@@ -82,7 +82,7 @@ export default function WhoShouldWearTab() {
                 <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[28px] md:text-[32px] text-black leading-none mb-4">
                     Who Should Avoid Emerald Stone?
                 </h3>
-                <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] mb-8">
+                <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] mb-10!">
                     Emerald (Panna) is powerful, but not universally suitable. It should be avoided by:
                 </p>
 
@@ -92,7 +92,7 @@ export default function WhoShouldWearTab() {
                             <div className="shrink-0 mt-0.5 md:mt-0">
                                 {orangeWarning}
                             </div>
-                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px]">
+                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px]">
                                 {text}
                             </p>
                         </div>

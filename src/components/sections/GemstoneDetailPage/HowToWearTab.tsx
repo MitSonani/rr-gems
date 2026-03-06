@@ -43,24 +43,24 @@ export default function HowToWearTab() {
                 <img src={line} alt="line" />
             </div>
 
-            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[48px] text-black leading-none mb-6">
+            <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[48px] text-black leading-none mb-10">
                 How to Wear <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[40px] md:text-[48px] italic text-[#FF8936]">Emerald</span>
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-12">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-10!">
                 Wearing a Panna Stone correctly is essential to receive its full astrological benefits. This gemstone is linked to Mercury (बुध), so it must be worn with proper rituals and timing.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-10 max-w-[1160px]">
                 {cards.map((card, index) => (
                     <div key={index} className="bg-[#FAF6F3] p-8 md:p-10 flex flex-col items-start h-full">
-                        <span className="font-open-sans text-[#FF8936] text-[18px] font-medium leading-[100%] mb-4 block">
+                        <span className="font-open-sans text-[#FF8936] text-[20px] font-medium leading-[100%] mb-4! block">
                             {card.number}
                         </span>
                         <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[#FF8936] text-[28px] md:text-[32px] leading-[100%] mb-4">
                             {card.title}
                         </h3>
-                        <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px]">
+                        <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px]">
                             {card.description}
                         </p>
                     </div>

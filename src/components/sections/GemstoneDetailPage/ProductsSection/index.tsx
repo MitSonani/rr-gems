@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import StarIcon from "/assets/AboutGem/star.svg";
 import TitleBelowLine from "/assets/GemCollection/titlebelowLine.svg";
 import { SlidersHorizontal, ArrowDownUp, ChevronDown } from 'lucide-react';
@@ -7,28 +8,55 @@ import ProductCard from './ProductCard';
 export default function ProductsSection() {
     const [isBuybackActive, setIsBuybackActive] = useState(false);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
         <div className="w-full bg-white px-4 pb-24">
 
             {/* Header Section */}
-            <div className="flex flex-col items-center justify-center pt-16 pb-12">
-                <div className="inline-flex items-center justify-center gap-[8px] bg-[#FCF2EB] py-[6px] px-[16px] mb-6">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={containerVariants}
+                className="flex flex-col items-center justify-center pt-16 pb-12"
+            >
+                <motion.div variants={itemVariants} className="inline-flex items-center justify-center gap-[8px] bg-[#FCF2EB] py-[6px] px-[16px] mb-6">
                     <img src={StarIcon} alt="Star Icon" className="h-[10px] w-[10px]" />
                     <span className="font-open-sans font-medium text-[12px] md:text-[13px] leading-[20px] tracking-widest text-[#FF8936] uppercase">
                         PURE, NATURAL, LAB CERTIFIED
                     </span>
                     <img src={StarIcon} alt="Star Icon" className="h-[10px] w-[10px]" />
-                </div>
+                </motion.div>
 
-                <h2 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[56px] text-black leading-none mb-4">
+                <motion.h2 variants={itemVariants} className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[40px] md:text-[56px] text-black leading-none mb-4">
                     All <span className="font-['Very_Vogue-Display_Italic',Helvetica] italic text-[#FF8936]">Products</span>
-                </h2>
+                </motion.h2>
 
-                <img src={TitleBelowLine} alt="Decorative line" className="mb-10" />
-            </div>
+                <motion.img variants={itemVariants} src={TitleBelowLine} alt="Decorative line" className="mb-10" />
+            </motion.div>
 
             {/* Filters and Sorting Toolbar */}
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#CED4DA] pb-4 mb-8">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#CED4DA] pb-4 mb-8"
+            >
 
                 {/* Left Side: Filter and Toggle */}
                 <div className="flex flex-wrap items-center gap-4">
@@ -76,17 +104,31 @@ export default function ProductsSection() {
                         <ChevronDown size={16} className="text-[#333333]" />
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={containerVariants}
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            >
                 {Array.from({ length: 12 }).map((_, index) => (
-                    <ProductCard key={index} />
+                    <motion.div key={index} variants={itemVariants}>
+                        <ProductCard />
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Pagination */}
-            <div className="flex items-center justify-center gap-2 mt-16">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex items-center justify-center gap-2 mt-16"
+            >
                 <button className="w-[36px] h-[36px] flex items-center justify-center border border-[#FF8936] bg-[#FCF2EB] text-[#FF8936] font-open-sans text-[14px] font-semibold rounded-sm">
                     1
                 </button>
@@ -95,7 +137,7 @@ export default function ProductsSection() {
                         {num}
                     </button>
                 ))}
-            </div>
+            </motion.div>
 
         </div>
     );

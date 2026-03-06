@@ -2,6 +2,7 @@ import Star from "/assets/AboutGem/star.svg";
 import line from "/assets/AboutGem/line.svg";
 import Image1 from "/assets/GemDetail/BuyerBeware.png";
 import Image2 from "/assets/GemDetail/BuyerBeware1.png";
+import CertificationPartners from "../CertificationPartners";
 
 export default function BuyerBewareTab() {
     const sections = [
@@ -35,7 +36,7 @@ export default function BuyerBewareTab() {
                 Buyer <span className="font-['Very_Vogue-Display_Italic',Helvetica] font-[401] text-[40px] md:text-[48px] italic text-[#FF8936]">Beware</span>
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] max-w-[1160px] mb-12">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] max-w-[1160px] mb-10!">
                 When you buy panna stone, caution is key. Always verify certification, watch for synthetic imitations, and examine colour quality closely. Purchasing from reputable sellers ensures authenticity, transparency, and long-term value protecting you from costly mistakes and misleading gemstone deals.
             </p>
 
@@ -52,7 +53,7 @@ export default function BuyerBewareTab() {
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1160px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1160px] mb-10">
                 <img
                     src={Image1}
                     alt="Certification Example 1"
@@ -64,6 +65,7 @@ export default function BuyerBewareTab() {
                     className="w-full h-auto object-contain border border-[#CED4DA]"
                 />
             </div>
+            <CertificationPartners isContainer={true} />
         </div>
     );
 }

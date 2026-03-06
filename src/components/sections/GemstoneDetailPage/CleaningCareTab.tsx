@@ -41,25 +41,25 @@ export default function CleaningCareTab() {
                 Cleaning & Care
             </h2>
 
-            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px] max-w-[1160px] mb-12">
+            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[1160px] mb-10!">
                 To maintain the beauty and shine of your Emerald, regular and careful maintenance is essential.
             </p>
 
             <div className="flex flex-col gap-6 max-w-[1160px]">
                 {cards.map((card, index) => (
                     <div key={index} className="flex flex-col md:flex-row border border-[#CED4DA] bg-white group overflow-hidden">
-                        <div className="w-full md:w-[320px] shrink-0 h-[220px] md:h-auto overflow-hidden">
+                        <div className="w-full md:w-[340px] shrink-0 h-[300px] md:h-auto overflow-hidden">
                             <img
                                 src={card.image}
                                 alt={card.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="w-full h-full min-h-[300px] object-cover transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>
                         <div className="p-6 md:p-10 flex flex-col justify-center">
-                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[#FF8936] text-[24px] md:text-[28px] leading-[100%] mb-4">
+                            <h3 className="font-['Very_Vogue-Display',Helvetica] font-[401] text-[#FF8936] text-[24px] md:text-[32px] leading-[100%] mb-2">
                                 {card.title}
                             </h3>
-                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[16px] font-normal leading-[26px]">
+                            <p className="font-open-sans text-[#6C757D] text-[15px] md:text-[18px] font-normal leading-[28px] max-w-[740px]">
                                 {card.description}
                             </p>
                         </div>
