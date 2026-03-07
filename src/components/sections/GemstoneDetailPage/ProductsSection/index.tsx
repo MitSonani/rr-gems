@@ -1,12 +1,63 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import StarIcon from "/assets/AboutGem/star.svg";
 import TitleBelowLine from "/assets/GemCollection/titlebelowLine.svg";
 import { SlidersHorizontal, ArrowDownUp, ChevronDown } from 'lucide-react';
 import ProductCard from './ProductCard';
+import FiltersModal from './FiltersModal';
+import ActiveFilters from './ActiveFilters';
+
+export type FilterState = {
+    price: [number, number];
+    carat: [number, number];
+    origin: string[];
+    certification: string[];
+    treatments: string[];
+    shapes: string[];
+    cuts: string[];
+    compositions: string[];
+};
+
+const INITIAL_FILTERS: FilterState = {
+    price: [0, 100000],
+    carat: [0, 15],
+    origin: ["Zambian"],
+    certification: [],
+    treatments: [],
+    shapes: [],
+    cuts: [],
+    compositions: [],
+};
 
 export default function ProductsSection() {
     const [isBuybackActive, setIsBuybackActive] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
+    const [selectedSort, setSelectedSort] = useState("Top Match");
+    const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const sortOptions = [
+        "Top Match",
+        "Prize - High to Low",
+        "Prize - Low to High",
+        "Weight - High to Low",
+        "Weight - Low to High",
+        "Our Choice"
+    ];
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -61,7 +112,10 @@ export default function ProductsSection() {
                 {/* Left Side: Filter and Toggle */}
                 <div className="flex flex-wrap items-center gap-4">
                     {/* Filters Button */}
-                    <button className="flex items-center gap-2 border border-[#CED4DA] px-4 py-2 hover:bg-gray-50 transition-colors cursor-pointer bg-white h-[40px]">
+                    <button
+                        onClick={() => setIsFiltersModalOpen(true)}
+                        className="flex items-center gap-2 border border-[#CED4DA] px-4 py-2 hover:bg-gray-50 transition-colors cursor-pointer bg-white h-[40px]"
+                    >
                         <SlidersHorizontal size={16} className="text-[#333333]" />
                         <span className="font-open-sans text-[14px] font-medium text-[#333333]">Filters</span>
                     </button>
@@ -97,14 +151,56 @@ export default function ProductsSection() {
                         </span>
                     </div>
 
-                    <button className="flex items-center justify-between border border-[#CED4DA] px-4 py-2 w-[160px] md:w-[200px] h-[40px] bg-white hover:bg-gray-50 transition-colors">
-                        <span className="font-open-sans text-[14px] font-medium text-[#333333]">
-                            Top Match
-                        </span>
-                        <ChevronDown size={16} className="text-[#333333]" />
-                    </button>
+                    <div className="relative" ref={dropdownRef}>
+                        <button
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                            className="flex items-center justify-between border border-[#CED4DA] px-4 py-2 w-[160px] md:w-[200px] h-[40px] bg-white hover:bg-gray-50 transition-colors"
+                        >
+                            <span className="font-open-sans text-[14px] font-medium text-[#333333]">
+                                {selectedSort}
+                            </span>
+                            <ChevronDown
+                                size={16}
+                                className={`text-[#333333] transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                            />
+                        </button>
+
+                        <AnimatePresence>
+                            {isDropdownOpen && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -5 }}
+                                    transition={{ duration: 0.15 }}
+                                    className="absolute top-full left-0 w-full bg-white border border-[#CED4DA] shadow-lg z-20 mt-[2px]"
+                                >
+                                    <div className="flex flex-col">
+                                        {sortOptions.map((option, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => {
+                                                    setSelectedSort(option);
+                                                    setIsDropdownOpen(false);
+                                                }}
+                                                className={`w-full text-left px-4 py-[10px] font-open-sans text-[14px] text-[#000000] hover:bg-gray-50 transition-colors ${idx !== sortOptions.length - 1 ? 'border-b border-[#CED4DA]' : ''
+                                                    } ${selectedSort === option ? 'font-medium bg-gray-50' : 'font-normal'}`}
+                                            >
+                                                {option}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 </div>
             </motion.div>
+
+            {/* Active Filters UI */}
+            <ActiveFilters
+                filters={filters}
+                setFilters={setFilters}
+            />
 
             {/* Product Grid */}
             <motion.div
@@ -138,6 +234,14 @@ export default function ProductsSection() {
                     </button>
                 ))}
             </motion.div>
+
+            {/* Modal */}
+            <FiltersModal
+                isOpen={isFiltersModalOpen}
+                onClose={() => setIsFiltersModalOpen(false)}
+                filters={filters}
+                onApply={setFilters}
+            />
 
         </div>
     );
